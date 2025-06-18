@@ -359,6 +359,7 @@ class MemStorage implements IStorage {
 // Check if running in Replit environment
 const isReplit = process.env.REPLIT_DEPLOYMENT_ID || process.env.REPL_ID;
 
+<<<<<<< HEAD
 // Storage initialization function
 export async function initializeStorage(): Promise<IStorage> {
   return new MemStorage();
@@ -366,3 +367,12 @@ export async function initializeStorage(): Promise<IStorage> {
 
 // For now, use in-memory storage to ensure the app works
 export const storage = new MemStorage();
+=======
+// For local development, always use in-memory storage to avoid database complexities during setup
+export const storage = new MemStorage();
+
+// Storage initialization function for when real database is needed
+export async function initializeStorage(): Promise<IStorage> {
+  return storage;
+}
+>>>>>>> 0c4a99c (update)

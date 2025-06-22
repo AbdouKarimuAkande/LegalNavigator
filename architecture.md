@@ -1209,6 +1209,180 @@ flowchart TD
     F -.-> F1[Include Cameroon law context<br/>and legal disclaimers]
 ```
 
+### 5. Sequence Diagram - Chatbot Messaging Flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend as FE
+    participant WebSocket as WS
+    participant API as API
+    participant AIService as AI
+    participant Database as DB
+    participant OpenAI
+
+    User->>FE: Type legal question
+    FE->>FE: Validate input
+    FE->>WS: Send message via WebSocket
+    WS->>API: Forward message to API
+    API->>DB: Save user message
+    DB-->>API: Message saved
+    
+    API->>AI: Process legal query
+    AI->>AI: Categorize legal domain
+    AI->>AI: Build Cameroon law context
+    AI->>OpenAI: Send contextual prompt
+    OpenAI-->>AI: Return AI response
+    
+    AI->>AI: Validate response quality
+    AI->>AI: Add legal disclaimers
+    AI->>AI: Calculate confidence score
+    AI->>DB: Save AI response
+    DB-->>AI: Response saved
+    
+    AI-->>API: Return processed response
+    API->>WS: Send response via WebSocket
+    WS->>FE: Broadcast to user
+    FE->>FE: Display response with formatting
+    FE-->>User: Show AI response with disclaimers
+    
+    alt Low Confidence Response
+        FE->>FE: Show lawyer recommendation
+        FE-->>User: Display "Consider consulting a lawyer"
+    else High Confidence Response
+        FE->>FE: Show follow-up suggestions
+        FE-->>User: Display suggested follow-up questions
+    end
+```
+
+### 6. Sequence Diagram - Chat History Viewing
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend as FE
+    participant API as API
+    participant Database as DB
+
+    User->>FE: Click "View Chat History"
+    FE->>FE: Check authentication status
+    FE->>API: GET /api/chat/sessions
+    API->>API: Validate JWT token
+    API->>DB: Query user's chat sessions
+    DB-->>API: Return session list
+    API-->>FE: Return sessions with metadata
+    
+    FE->>FE: Display session list
+    FE-->>User: Show chat sessions with titles and dates
+    
+    User->>FE: Select specific chat session
+    FE->>API: GET /api/chat/sessions/{sessionId}/messages
+    API->>API: Verify user owns session
+    API->>DB: Query messages for session
+    DB-->>API: Return message history
+    API-->>FE: Return formatted messages
+    
+    loop For each message
+        FE->>FE: Format message content
+        FE->>FE: Apply sender-specific styling
+        FE->>FE: Add timestamps
+    end
+    
+    FE-->>User: Display complete chat history
+    
+    opt User wants to continue chat
+        User->>FE: Type new message
+        Note over FE: Resume normal chat flow
+    end
+    
+    opt User wants to export
+        User->>FE: Click "Export Chat"
+        FE->>FE: Generate PDF/Text export
+        FE-->>User: Download chat history
+    end
+```
+
+### 7. Sequence Diagram - Lawyer Directory and Consultation
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend as FE
+    participant API as API
+    participant Database as DB
+    participant EmailService as Email
+    participant Lawyer
+
+    %% Lawyer Search Flow
+    User->>FE: Access lawyer directory
+    FE->>API: GET /api/lawyers
+    API->>DB: Query verified lawyers
+    DB-->>API: Return lawyer profiles
+    API-->>FE: Return lawyer list with ratings
+    FE-->>User: Display lawyer directory
+    
+    %% Filtering and Search
+    User->>FE: Apply filters (specialization, location)
+    FE->>API: GET /api/lawyers?filters
+    API->>DB: Query with filter criteria
+    DB-->>API: Return filtered results
+    API-->>FE: Return filtered lawyer list
+    FE-->>User: Display filtered results
+    
+    %% Lawyer Profile View
+    User->>FE: Click lawyer profile
+    FE->>API: GET /api/lawyers/{lawyerId}
+    API->>DB: Query lawyer details and reviews
+    DB-->>API: Return complete profile
+    API-->>FE: Return lawyer profile data
+    FE-->>User: Display detailed lawyer profile
+    
+    %% Contact Lawyer
+    User->>FE: Click "Contact Lawyer"
+    FE->>FE: Check user authentication
+    FE->>API: POST /api/lawyers/{lawyerId}/contact
+    API->>DB: Create consultation request
+    DB-->>API: Request created
+    
+    API->>Email: Send notification to lawyer
+    Email-->>Lawyer: Email notification
+    API->>DB: Create notification for user
+    API-->>FE: Return success confirmation
+    FE-->>User: Show "Request sent" message
+    
+    %% Lawyer Response
+    Lawyer->>Email: Reply via email or platform
+    alt Direct Platform Response
+        Lawyer->>API: POST /api/consultations/{id}/respond
+        API->>DB: Save lawyer response
+        API->>Email: Notify user of response
+        Email-->>User: Email notification
+    else Email Response
+        Email->>API: Webhook/Forward response
+        API->>DB: Save response
+        API->>FE: Push notification (if online)
+    end
+    
+    %% Consultation Session
+    opt Video/Voice Call
+        API->>API: Generate meeting link
+        API->>Email: Send meeting details
+        Email-->>User: Meeting invitation
+        Email-->>Lawyer: Meeting confirmation
+    end
+    
+    %% Post-Consultation
+    opt Rating and Review
+        User->>FE: Submit rating and review
+        FE->>API: POST /api/lawyers/{lawyerId}/ratings
+        API->>DB: Save rating and review
+        API->>DB: Update lawyer average rating
+        DB-->>API: Rating saved
+        API-->>FE: Return success
+        FE-->>User: Show "Review submitted"
+    end
+```
+
 ## Application of Scrum
 
 ### Team Organization

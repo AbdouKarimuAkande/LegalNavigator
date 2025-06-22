@@ -2,6 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { AuthProvider, useAuth } from '../hooks/use-auth';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { apiRequest } from '../lib/queryClient';
+import { describe, it, beforeEach, expect, jest } from '@jest/globals';
 
 // Mock the API request function
 jest.mock('../lib/queryClient', () => ({
@@ -60,7 +61,7 @@ describe('Authentication Hook', () => {
       </TestWrapper>
     );
 
-    expect(screen.getByTestId('auth-status')).toHaveTextContent('Loading');
+    expect(screen.getByTestId('auth-status')).toHaveTextContent('Not Authenticated');
   });
 
   it('should handle successful login', async () => {

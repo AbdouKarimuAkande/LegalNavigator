@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from '@jest/globals';
-import { storage } from '../../server/storage-pg';
+import { storage } from '../../server/storage';
 import { nanoid } from 'nanoid';
 
 describe('Storage Layer', () => {
@@ -21,6 +21,8 @@ describe('Storage Layer', () => {
         name: 'Test User',
         email: 'test@example.com',
         passwordHash: 'hashed_password',
+        firstName: 'Test',
+        lastName: 'User',
         isLawyer: false
       };
 
@@ -37,6 +39,8 @@ describe('Storage Layer', () => {
         name: 'Test User',
         email: 'unique@example.com',
         passwordHash: 'hashed_password',
+        firstName: 'Test',
+        lastName: 'User',
         isLawyer: false
       };
 
@@ -52,6 +56,8 @@ describe('Storage Layer', () => {
         name: 'Test User',
         email: 'update@example.com',
         passwordHash: 'hashed_password',
+        firstName: 'Test',
+        lastName: 'User',
         isLawyer: false
       };
 
@@ -72,6 +78,8 @@ describe('Storage Layer', () => {
         name: 'Test User',
         email: 'chat@example.com',
         passwordHash: 'hashed_password',
+        firstName: 'Test',
+        lastName: 'User',
         isLawyer: false
       };
 
@@ -93,6 +101,8 @@ describe('Storage Layer', () => {
         name: 'Test User',
         email: 'chatmsg@example.com',
         passwordHash: 'hashed_password',
+        firstName: 'Test',
+        lastName: 'User',
         isLawyer: false
       };
 

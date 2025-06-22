@@ -3,6 +3,7 @@ import express from 'express';
 import { registerRoutes } from '../../routes';
 import { storage } from '../../storage';
 import bcrypt from 'bcrypt';
+import { describe, it, beforeAll, afterAll, beforeEach, expect, jest } from '@jest/globals';
 
 describe('Routes Integration Tests', () => {
   let app: express.Express;
@@ -53,8 +54,11 @@ describe('Routes Integration Tests', () => {
 
       // Create user first
       await storage.createUser({
-        ...userData,
-        password: await bcrypt.hash(userData.password, 10),
+        name: userData.name,
+        email: userData.email,
+        passwordHash: await bcrypt.hash(userData.password, 10),
+        firstName: 'Existing',
+        lastName: 'User',
         isLawyer: false,
         emailVerified: false,
         twoFactorEnabled: false
@@ -78,8 +82,11 @@ describe('Routes Integration Tests', () => {
 
       // Create user first
       await storage.createUser({
-        ...userData,
-        password: await bcrypt.hash(userData.password, 10),
+        name: userData.name,
+        email: userData.email,
+        passwordHash: await bcrypt.hash(userData.password, 10),
+        firstName: 'Login',
+        lastName: 'User',
         isLawyer: false,
         emailVerified: true,
         twoFactorEnabled: false

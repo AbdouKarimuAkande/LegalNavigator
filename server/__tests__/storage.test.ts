@@ -16,8 +16,6 @@ describe('Storage Layer Tests', () => {
       const userData = {
         email: 'test@example.com',
         name: 'Test User',
-        firstName: 'Test',
-        lastName: 'User',
         passwordHash: 'hashedpassword123',
         isLawyer: false,
         twoFactorEnabled: false,
@@ -25,7 +23,7 @@ describe('Storage Layer Tests', () => {
       };
 
       const user = await storage.createUser(userData);
-
+      
       expect(user.id).toBeDefined();
       expect(user.email).toBe(userData.email);
       expect(user.name).toBe(userData.name);
@@ -37,8 +35,6 @@ describe('Storage Layer Tests', () => {
       const userData = {
         email: 'test@example.com',
         name: 'Test User',
-        firstName: 'Test',
-        lastName: 'User',
         passwordHash: 'hashedpassword123',
         isLawyer: false,
         twoFactorEnabled: false,
@@ -47,7 +43,7 @@ describe('Storage Layer Tests', () => {
 
       const createdUser = await storage.createUser(userData);
       const foundUser = await storage.getUserByEmail('test@example.com');
-
+      
       expect(foundUser).toBeDefined();
       expect(foundUser?.id).toBe(createdUser.id);
     });
@@ -56,8 +52,6 @@ describe('Storage Layer Tests', () => {
       const userData = {
         email: 'test@example.com',
         name: 'Test User',
-        firstName: 'Test',
-        lastName: 'User',
         passwordHash: 'hashedpassword123',
         isLawyer: false,
         twoFactorEnabled: false,
@@ -72,7 +66,7 @@ describe('Storage Layer Tests', () => {
 
       expect(updatedUser.name).toBe('Updated Name');
       expect(updatedUser.emailVerified).toBe(true);
-      expect(updatedUser.updatedAt?.getTime()).toBeGreaterThan(user.updatedAt?.getTime() || 0);
+      expect(updatedUser.updatedAt.getTime()).toBeGreaterThan(user.updatedAt.getTime());
     });
   });
 
@@ -81,8 +75,6 @@ describe('Storage Layer Tests', () => {
       const userData = {
         email: 'test@example.com',
         name: 'Test User',
-        firstName: 'Test',
-        lastName: 'User',
         passwordHash: 'hashedpassword123',
         isLawyer: false,
         twoFactorEnabled: false,
@@ -93,11 +85,11 @@ describe('Storage Layer Tests', () => {
       const sessionData = {
         userId: user.id,
         title: 'Legal Consultation',
-        status: 'active' as const
+        status: 'active'
       };
 
       const session = await storage.createChatSession(sessionData);
-
+      
       expect(session.id).toBeDefined();
       expect(session.userId).toBe(user.id);
       expect(session.title).toBe('Legal Consultation');
@@ -108,8 +100,6 @@ describe('Storage Layer Tests', () => {
       const userData = {
         email: 'test@example.com',
         name: 'Test User',
-        firstName: 'Test',
-        lastName: 'User',
         passwordHash: 'hashedpassword123',
         isLawyer: false,
         twoFactorEnabled: false,
@@ -117,18 +107,17 @@ describe('Storage Layer Tests', () => {
       };
 
       const user = await storage.createUser(userData);
-      const sessionData = {
+      const session = await storage.createChatSession({
         userId: user.id,
         title: 'Test Session',
-        status: 'active' as const
-      };
-
-      const session = await storage.createChatSession(sessionData);
+        status: 'active'
+      });
 
       const messageData = {
         sessionId: session.id,
+        userId: user.id,
         content: 'What are my rights?',
-        role: 'user' as const
+        sender: 'user' as const
       };
 
       const message = await storage.createChatMessage(messageData);
@@ -146,8 +135,6 @@ describe('Storage Layer Tests', () => {
       const userData = {
         email: 'test@example.com',
         name: 'Test User',
-        firstName: 'Test',
-        lastName: 'User',
         passwordHash: 'hashedpassword123',
         isLawyer: false,
         twoFactorEnabled: false,
@@ -158,15 +145,15 @@ describe('Storage Layer Tests', () => {
       const codeData = {
         userId: user.id,
         code: '123456',
-        type: 'email_verification' as const,
+        type: 'email_verification',
         used: false,
         expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000)
       };
 
       const verificationCode = await storage.createVerificationCode(codeData);
       const retrievedCode = await storage.getVerificationCode(
-        user.id,
-        'email_verification',
+        user.id, 
+        'email_verification', 
         '123456'
       );
 
@@ -180,8 +167,6 @@ describe('Storage Layer Tests', () => {
       const userData = {
         email: 'test@example.com',
         name: 'Test User',
-        firstName: 'Test',
-        lastName: 'User',
         passwordHash: 'hashedpassword123',
         isLawyer: false,
         twoFactorEnabled: false,
@@ -192,7 +177,7 @@ describe('Storage Layer Tests', () => {
       const codeData = {
         userId: user.id,
         code: '123456',
-        type: 'email_verification' as const,
+        type: 'email_verification',
         used: false,
         expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000)
       };
@@ -201,8 +186,8 @@ describe('Storage Layer Tests', () => {
       await storage.markVerificationCodeUsed(verificationCode.id);
 
       const retrievedCode = await storage.getVerificationCode(
-        user.id,
-        'email_verification',
+        user.id, 
+        'email_verification', 
         '123456'
       );
 

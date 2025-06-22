@@ -1,0 +1,780 @@
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+    console.error
+      Error processing legal query: Error: Model API Error
+          at C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:82:49
+          at Generator.next (<anonymous>)
+          at C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:8:71
+          at new Promise (<anonymous>)
+          at __awaiter (C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:4:12) 
+          at Object.<anonymous> (C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:81:60)
+          at Promise.finally.completed (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1559:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1499:10)
+          at _callCircusTest (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1009:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:949:3)
+          at _runTestsForDescribeBlock (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:839:13)
+          at _runTestsForDescribeBlock (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:829:11)
+          at _runTestsForDescribeBlock (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:829:11)
+          at run (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:757:3)
+          at runAndTransformResultsToJestFormat (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1920:21)
+          at jestAdapter (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\runner.js:101:19)
+          at runTestInternal (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-runner\build\testWorker.js:272:16)
+          at runTest (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-runner\build\testWorker.js:340:7)
+          at Object.worker (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-runner\build\testWorker.js:494:12)
+
+       98 |       };
+       99 |     } catch (error) {
+    > 100 |       console.error('Error processing legal query:', error);
+          |               ^
+      101 |       throw new Error('Failed to process legal query with custom model');
+      102 |     }
+      103 |   }
+
+      at AILegalService.<anonymous> (server/ai-service.ts:100:15)
+          at Generator.throw (<anonymous>)
+      at rejected (server/ai-service.ts:6:65)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+    console.log
+      AI Legal Service initialized - waiting for custom model
+
+      at new AILegalService (server/ai-service.ts:50:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+ FAIL  server/__tests__/integration/routes.integration.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+  ● Test suite failed to run
+
+    ReferenceError: TextEncoder is not defined
+
+    > 1 | import request from 'supertest';
+        | ^
+      2 | import express from 'express';
+      3 | import { registerRoutes } from '../../routes';
+      4 | import { storage } from '../../storage';
+
+      at utf8ToBytes (node_modules/@noble/hashes/src/utils.ts:217:29)
+      at toBytes (node_modules/@noble/hashes/src/utils.ts:236:40)
+      at hashC (node_modules/@noble/hashes/src/utils.ts:342:63)
+      at hash (node_modules/@paralleldrive/cuid2/src/index.js:34:22)
+      at createFingerprint (node_modules/@paralleldrive/cuid2/src/index.js:63:10)
+      at init (node_modules/@paralleldrive/cuid2/src/index.js:81:17)
+      at Object.<anonymous> (node_modules/@paralleldrive/cuid2/src/index.js:101:18)
+      at Object.<anonymous> (node_modules/@paralleldrive/cuid2/index.js:1:50)
+      at Object.<anonymous> (node_modules/formidable/dist/index.cjs:8:13)
+      at Object.require (node_modules/superagent/src/node/index.js:16:20)
+      at Object.<anonymous> (node_modules/supertest/lib/test.js:12:21)
+      at Object.<anonymous> (node_modules/supertest/index.js:13:14)
+      at Object.<anonymous> (server/__tests__/integration/routes.integration.test.ts:1:1)
+
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+ FAIL  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\wouter\esm\index.js:1
+    import { parse } from 'regexparam';
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+    > 1 | import { Switch, Route } from "wouter";
+        | ^
+      2 | import { queryClient } from "./lib/queryClient";
+      3 | import { QueryClientProvider } from "@tanstack/react-query";
+      4 | import { Toaster } from "@/components/ui/toaster";
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.<anonymous> (client/src/App.tsx:1:1)
+      at Object.<anonymous> (client/src/__tests__/e2e/user-flow.e2e.test.tsx:3:1)
+
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+ RUNS  tests/unit/storage.test.ts
+ FAIL  server/__tests__/2fa-service.test.ts
+
+ RUNS  client/src/__tests__/auth.test.tsx  
+ RUNS  tests/unit/storage.test.ts
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\node-fetch\src\index.js:9
+    import http from 'node:http';
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      1 | import speakeasy from 'speakeasy';
+      2 | import QRCode from 'qrcode';
+    > 3 | import fetch from 'node-fetch';
+        | ^
+      4 |
+      5 | export interface TwoFactorSetup {
+      6 |   secret: string;
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.<anonymous> (server/2fa-service.ts:3:1)
+      at Object.<anonymous> (server/__tests__/2fa-service.test.ts:1:1)
+
+
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+ FAIL  client/src/__tests__/auth.test.tsx    
+
+ RUNS  client/src/__tests__/auth.test.tsx    
+  ● Test suite failed to run
+
+    client/src/__tests__/auth.test.tsx:64:47 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    64     expect(screen.getByTestId('auth-status')).toHaveTextContent('Not Authenticated');
+                                                     ~~~~~~~~~~~~~~~~~
+    client/src/__tests__/auth.test.tsx:92:49 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    92       expect(screen.getByTestId('auth-status')).toHaveTextContent('Not Authenticated');
+                                                       ~~~~~~~~~~~~~~~~~
+    client/src/__tests__/auth.test.tsx:98:49 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    98       expect(screen.getByTestId('auth-status')).toHaveTextContent('Authenticated');
+                                                       ~~~~~~~~~~~~~~~~~
+    client/src/__tests__/auth.test.tsx:99:48 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    99       expect(screen.getByTestId('user-email')).toHaveTextContent('test@example.com');
+                                                      ~~~~~~~~~~~~~~~~~
+    client/src/__tests__/auth.test.tsx:120:49 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    120       expect(screen.getByTestId('auth-status')).toHaveTextContent('Not Authenticated');        
+                                                        ~~~~~~~~~~~~~~~~~
+    client/src/__tests__/auth.test.tsx:126:49 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    126       expect(screen.getByTestId('auth-status')).toHaveTextContent('Not Authenticated');        
+                                                        ~~~~~~~~~~~~~~~~~
+    client/src/__tests__/auth.test.tsx:156:49 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    156       expect(screen.getByTestId('auth-status')).toHaveTextContent('Authenticated');
+                                                        ~~~~~~~~~~~~~~~~~
+    client/src/__tests__/auth.test.tsx:162:49 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    162       expect(screen.getByTestId('auth-status')).toHaveTextContent('Not Authenticated');        
+                                                        ~~~~~~~~~~~~~~~~~
+    client/src/__tests__/auth.test.tsx:163:48 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    163       expect(screen.getByTestId('user-email')).toHaveTextContent('No user');
+                                                       ~~~~~~~~~~~~~~~~~
+    client/src/__tests__/auth.test.tsx:181:49 - error TS2339: Property 'toHaveTextContent' does not exist on type 'Matchers<void, HTMLElement> & SnapshotMatchers<void, HTMLElement> & Inverse<JestMatchers<void, HTMLElement>> & PromiseMatchers<...>'.
+
+    181       expect(screen.getByTestId('auth-status')).toHaveTextContent('Not Authenticated');        
+                                                        ~~~~~~~~~~~~~~~~~
+
+
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ FAIL  server/__tests__/routes.test.ts       
+
+  ● Test suite failed to run
+
+    server/__tests__/routes.test.ts:7:1 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    7 describe('API Routes Integration Tests', () => {
+      ~~~~~~~~
+    server/__tests__/routes.test.ts:11:3 - error TS2304: Cannot find name 'beforeAll'.
+
+    11   beforeAll(async () => {
+         ~~~~~~~~~
+    server/__tests__/routes.test.ts:14:35 - error TS2345: Argument of type 'Application' is not assignable to parameter of type 'Express'.
+      Type 'Application<Record<string, any>>' is missing the following properties from type 'Express': 
+request, response
+
+    14     server = await registerRoutes(app);
+                                         ~~~
+    server/__tests__/routes.test.ts:17:3 - error TS2304: Cannot find name 'beforeEach'.
+
+    17   beforeEach(() => {
+         ~~~~~~~~~~
+    server/__tests__/routes.test.ts:25:3 - error TS2304: Cannot find name 'afterAll'.
+
+    25   afterAll(() => {
+         ~~~~~~~~
+    server/__tests__/routes.test.ts:29:3 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    29   describe('Authentication Routes', () => {
+         ~~~~~~~~
+    server/__tests__/routes.test.ts:30:5 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    30     describe('POST /api/auth/register', () => {
+           ~~~~~~~~
+    server/__tests__/routes.test.ts:31:7 - error TS2593: Cannot find name 'it'. Do you need to install 
+type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    31       it('should register a new user successfully', async () => {
+             ~~
+    server/__tests__/routes.test.ts:43:9 - error TS2304: Cannot find name 'expect'.
+
+    43         expect(response.body.message).toContain('registered successfully');
+               ~~~~~~
+    server/__tests__/routes.test.ts:44:9 - error TS2304: Cannot find name 'expect'.
+
+    44         expect(response.body.userId).toBeDefined();
+               ~~~~~~
+    server/__tests__/routes.test.ts:47:7 - error TS2593: Cannot find name 'it'. Do you need to install 
+type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    47       it('should reject duplicate email registration', async () => {
+             ~~
+    server/__tests__/routes.test.ts:67:7 - error TS2593: Cannot find name 'it'. Do you need to install 
+type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    67       it('should validate required fields', async () => {
+             ~~
+    server/__tests__/routes.test.ts:80:5 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    80     describe('POST /api/auth/login', () => {
+           ~~~~~~~~
+    server/__tests__/routes.test.ts:81:7 - error TS2304: Cannot find name 'beforeEach'.
+
+    81       beforeEach(async () => {
+             ~~~~~~~~~~
+    server/__tests__/routes.test.ts:84:34 - error TS2345: Argument of type '{ email: string; name: string; passwordHash: string; isLawyer: false; twoFactorEnabled: false; emailVerified: true; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... 
+| undefined; }'.
+      Type '{ email: string; name: string; passwordHash: string; isLawyer: false; twoFactorEnabled: false; emailVerified: true; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+     84         await storage.createUser({
+                                         ~
+     85           email: 'test@example.com',
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ...
+     90           emailVerified: true
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     91         });
+        ~~~~~~~~~
+    server/__tests__/routes.test.ts:94:7 - error TS2593: Cannot find name 'it'. Do you need to install 
+type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    94       it('should login with valid credentials', async () => {
+             ~~
+    server/__tests__/routes.test.ts:103:9 - error TS2304: Cannot find name 'expect'.
+
+    103         expect(response.body.token).toBeDefined();
+                ~~~~~~
+    server/__tests__/routes.test.ts:104:9 - error TS2304: Cannot find name 'expect'.
+
+    104         expect(response.body.user).toBeDefined();
+                ~~~~~~
+    server/__tests__/routes.test.ts:105:9 - error TS2304: Cannot find name 'expect'.
+
+    105         expect(response.body.user.email).toBe('test@example.com');
+                ~~~~~~
+    server/__tests__/routes.test.ts:108:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    108       it('should reject invalid credentials', async () => {
+              ~~
+    server/__tests__/routes.test.ts:118:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    118       it('should reject non-existent user', async () => {
+              ~~
+    server/__tests__/routes.test.ts:130:3 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    130   describe('Chat Routes', () => {
+          ~~~~~~~~
+    server/__tests__/routes.test.ts:134:5 - error TS2304: Cannot find name 'beforeEach'.
+
+    134     beforeEach(async () => {
+            ~~~~~~~~~~
+    server/__tests__/routes.test.ts:137:45 - error TS2345: Argument of type '{ email: string; name: string; passwordHash: string; isLawyer: false; twoFactorEnabled: false; emailVerified: true; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }'.
+      Type '{ email: string; name: string; passwordHash: string; isLawyer: false; twoFactorEnabled: false; emailVerified: true; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    137       const user = await storage.createUser({
+                                                    ~
+    138         email: 'test@example.com',
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ...
+    143         emailVerified: true
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    144       });
+        ~~~~~~~
+    server/__tests__/routes.test.ts:157:5 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    157     describe('POST /api/chat/sessions', () => {
+            ~~~~~~~~
+    server/__tests__/routes.test.ts:158:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    158       it('should create a new chat session', async () => {
+              ~~
+    server/__tests__/routes.test.ts:167:9 - error TS2304: Cannot find name 'expect'.
+
+    167         expect(response.body.id).toBeDefined();
+                ~~~~~~
+    server/__tests__/routes.test.ts:168:9 - error TS2304: Cannot find name 'expect'.
+
+    168         expect(response.body.title).toBe('Legal Consultation');
+                ~~~~~~
+    server/__tests__/routes.test.ts:169:9 - error TS2304: Cannot find name 'expect'.
+
+    169         expect(response.body.userId).toBe(userId);
+                ~~~~~~
+    server/__tests__/routes.test.ts:172:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    172       it('should require authentication', async () => {
+              ~~
+    server/__tests__/routes.test.ts:182:5 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    182     describe('GET /api/chat/sessions', () => {
+            ~~~~~~~~
+    server/__tests__/routes.test.ts:183:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    183       it('should retrieve user chat sessions', async () => {
+              ~~
+    server/__tests__/routes.test.ts:196:9 - error TS2304: Cannot find name 'expect'.
+
+    196         expect(Array.isArray(response.body)).toBe(true);
+                ~~~~~~
+    server/__tests__/routes.test.ts:197:9 - error TS2304: Cannot find name 'expect'.
+
+    197         expect(response.body).toHaveLength(1);
+                ~~~~~~
+    server/__tests__/routes.test.ts:198:9 - error TS2304: Cannot find name 'expect'.
+
+    198         expect(response.body[0].title).toBe('Test Session');
+                ~~~~~~
+    server/__tests__/routes.test.ts:203:3 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    203   describe('AI Legal Query Route', () => {
+          ~~~~~~~~
+    server/__tests__/routes.test.ts:206:5 - error TS2304: Cannot find name 'beforeEach'.
+
+    206     beforeEach(async () => {
+            ~~~~~~~~~~
+    server/__tests__/routes.test.ts:209:32 - error TS2345: Argument of type '{ email: string; name: string; passwordHash: string; isLawyer: false; twoFactorEnabled: false; emailVerified: true; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }'.
+      Type '{ email: string; name: string; passwordHash: string; isLawyer: false; twoFactorEnabled: false; emailVerified: true; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    209       await storage.createUser({
+                                       ~
+    210         email: 'test@example.com',
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ...
+    215         emailVerified: true
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    216       });
+        ~~~~~~~
+    server/__tests__/routes.test.ts:228:5 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    228     describe('POST /api/ai/legal-query', () => {
+            ~~~~~~~~
+    server/__tests__/routes.test.ts:229:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    229       it('should process legal query', async () => {
+              ~~
+    server/__tests__/routes.test.ts:239:9 - error TS2304: Cannot find name 'expect'.
+
+    239         expect(response.body.answer).toBeDefined();
+                ~~~~~~
+    server/__tests__/routes.test.ts:240:9 - error TS2304: Cannot find name 'expect'.
+
+    240         expect(response.body.category).toBeDefined();
+                ~~~~~~
+    server/__tests__/routes.test.ts:241:9 - error TS2304: Cannot find name 'expect'.
+
+    241         expect(response.body.confidence).toBeDefined();
+                ~~~~~~
+    server/__tests__/routes.test.ts:242:9 - error TS2304: Cannot find name 'expect'.
+
+    242         expect(response.body.disclaimer).toBeDefined();
+                ~~~~~~
+    server/__tests__/routes.test.ts:245:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    245       it('should require authentication', async () => {
+              ~~
+    server/__tests__/routes.test.ts:254:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    254       it('should validate query format', async () => {
+              ~~
+    server/__tests__/routes.test.ts:267:3 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    267   describe('Lawyer Directory Routes', () => {
+          ~~~~~~~~
+    server/__tests__/routes.test.ts:271:5 - error TS2304: Cannot find name 'beforeEach'.
+
+    271     beforeEach(async () => {
+            ~~~~~~~~~~
+    server/__tests__/routes.test.ts:274:45 - error TS2345: Argument of type '{ email: string; name: string; passwordHash: string; isLawyer: true; twoFactorEnabled: false; emailVerified: true; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... 
+| undefined; }'.
+      Type '{ email: string; name: string; passwordHash: string; isLawyer: true; twoFactorEnabled: false; emailVerified: true; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: 
+"user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 
+more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    274       const user = await storage.createUser({
+                                                    ~
+    275         email: 'lawyer@example.com',
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ...
+    280         emailVerified: true
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    281       });
+        ~~~~~~~
+    server/__tests__/routes.test.ts:294:5 - error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    294     describe('GET /api/lawyers', () => {
+            ~~~~~~~~
+    server/__tests__/routes.test.ts:295:7 - error TS2304: Cannot find name 'beforeEach'.
+
+    295       beforeEach(async () => {
+              ~~~~~~~~~~
+    server/__tests__/routes.test.ts:305:11 - error TS2322: Type 'number' is not assignable to type 'string'.
+
+    305           rating: 450,
+                  ~~~~~~
+
+      shared/schema.ts:67:3
+        67   rating: decimal("rating", { precision: 2, scale: 1 }).default("0.0"),
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        The expected type comes from property 'rating' which is declared here on type '{ location: string; userId: string; licenseNumber: string; specialization: Json; experienceYears: number; languages: Json; hourlyRate?: string | null | undefined; bio?: string | null | undefined; ... 5 more ...; totalRatings?: number | ... 1 more ... | undefined; }'
+    server/__tests__/routes.test.ts:310:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    310       it('should retrieve lawyers list', async () => {
+              ~~
+    server/__tests__/routes.test.ts:316:9 - error TS2304: Cannot find name 'expect'.
+
+    316         expect(Array.isArray(response.body)).toBe(true);
+                ~~~~~~
+    server/__tests__/routes.test.ts:317:9 - error TS2304: Cannot find name 'expect'.
+
+    317         expect(response.body).toHaveLength(1);
+                ~~~~~~
+    server/__tests__/routes.test.ts:318:9 - error TS2304: Cannot find name 'expect'.
+
+    318         expect(response.body[0].specialization).toBe('Criminal Law');
+                ~~~~~~
+    server/__tests__/routes.test.ts:319:9 - error TS2304: Cannot find name 'expect'.
+
+    319         expect(response.body[0].user).toBeDefined();
+                ~~~~~~
+    server/__tests__/routes.test.ts:322:7 - error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+
+    322       it('should filter lawyers by specialization', async () => {
+              ~~
+    server/__tests__/routes.test.ts:328:9 - error TS2304: Cannot find name 'expect'.
+
+    328         expect(response.body).toHaveLength(1);
+                ~~~~~~
+    server/__tests__/routes.test.ts:329:9 - error TS2304: Cannot find name 'expect'.
+
+    329         expect(response.body[0].specialization).toContain('Criminal');
+                ~~~~~~
+
+
+ FAIL  server/__tests__/storage.test.ts      
+  ● Test suite failed to run
+
+    server/__tests__/storage.test.ts:76:14 - error TS18047: 'updatedUser.updatedAt' is possibly 'null'.
+
+    76       expect(updatedUser.updatedAt.getTime()).toBeGreaterThan(user.updatedAt.getTime());        
+                    ~~~~~~~~~~~~~~~~~~~~~
+    server/__tests__/storage.test.ts:76:63 - error TS18047: 'user.updatedAt' is possibly 'null'.       
+
+    76       expect(updatedUser.updatedAt.getTime()).toBeGreaterThan(user.updatedAt.getTime());        
+                                                                     ~~~~~~~~~~~~~~
+    server/__tests__/storage.test.ts:91:45 - error TS2345: Argument of type '{ email: string; name: string; passwordHash: string; isLawyer: boolean; twoFactorEnabled: boolean; emailVerified: boolean; }' is 
+not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | 
+undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }'.
+      Type '{ email: string; name: string; passwordHash: string; isLawyer: boolean; twoFactorEnabled: boolean; emailVerified: boolean; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    91       const user = await storage.createUser(userData);
+                                                   ~~~~~~~~
+    server/__tests__/storage.test.ts:98:55 - error TS2345: Argument of type '{ userId: string; title: string; status: string; }' is not assignable to parameter of type '{ userId: string; title: string; status?: "active" | "completed" | "archived" | null | undefined; language?: "en" | "fr" | null | undefined; }'.
+      Types of property 'status' are incompatible.
+        Type 'string' is not assignable to type '"active" | "completed" | "archived" | null | undefined'.
+
+    98       const session = await storage.createChatSession(sessionData);
+                                                             ~~~~~~~~~~~
+    server/__tests__/storage.test.ts:116:45 - error TS2345: Argument of type '{ email: string; name: string; passwordHash: string; isLawyer: boolean; twoFactorEnabled: boolean; emailVerified: boolean; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 
+more ... | undefined; }'.
+      Type '{ email: string; name: string; passwordHash: string; isLawyer: boolean; twoFactorEnabled: boolean; emailVerified: boolean; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    116       const user = await storage.createUser(userData);
+                                                    ~~~~~~~~
+    server/__tests__/storage.test.ts:130:55 - error TS2345: Argument of type '{ sessionId: string; userId: string; content: string; sender: "user"; }' is not assignable to parameter of type '{ role: "user" 
+| "assistant"; sessionId: string; content: string; category?: string | null | undefined; confidence?: string | null | undefined; referencesData?: Json | undefined; }'.
+      Property 'role' is missing in type '{ sessionId: string; userId: string; content: string; sender: "user"; }' but required in type '{ role: "user" | "assistant"; sessionId: string; content: string; category?: string | null | undefined; confidence?: string | null | undefined; referencesData?: Json | undefined; }'.
+
+    130       const message = await storage.createChatMessage(messageData);
+                                                              ~~~~~~~~~~~
+
+      shared/schema.ts:44:3
+        44   role: mysqlEnum("role", ["user", "assistant"]).notNull(),
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        'role' is declared here.
+    server/__tests__/storage.test.ts:151:45 - error TS2345: Argument of type '{ email: string; name: string; passwordHash: string; isLawyer: boolean; twoFactorEnabled: boolean; emailVerified: boolean; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 
+more ... | undefined; }'.
+      Type '{ email: string; name: string; passwordHash: string; isLawyer: boolean; twoFactorEnabled: boolean; emailVerified: boolean; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    151       const user = await storage.createUser(userData);
+                                                    ~~~~~~~~
+    server/__tests__/storage.test.ts:160:69 - error TS2345: Argument of type '{ userId: string; code: string; type: string; used: boolean; expiresAt: Date; }' is not assignable to parameter of type '{ code: string; type: "email_verification" | "password_reset" | "two_factor"; userId: string; expiresAt: Date; used?: boolean | null | undefined; }'.
+      Types of property 'type' are incompatible.
+        Type 'string' is not assignable to type '"email_verification" | "password_reset" | "two_factor"'.
+
+    160       const verificationCode = await storage.createVerificationCode(codeData);
+                                                                            ~~~~~~~~
+    server/__tests__/storage.test.ts:183:45 - error TS2345: Argument of type '{ email: string; name: string; passwordHash: string; isLawyer: boolean; twoFactorEnabled: boolean; emailVerified: boolean; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 
+more ... | undefined; }'.
+      Type '{ email: string; name: string; passwordHash: string; isLawyer: boolean; twoFactorEnabled: boolean; emailVerified: boolean; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    183       const user = await storage.createUser(userData);
+                                                    ~~~~~~~~
+    server/__tests__/storage.test.ts:192:69 - error TS2345: Argument of type '{ userId: string; code: string; type: string; used: boolean; expiresAt: Date; }' is not assignable to parameter of type '{ code: string; type: "email_verification" | "password_reset" | "two_factor"; userId: string; expiresAt: Date; used?: boolean | null | undefined; }'.
+      Types of property 'type' are incompatible.
+        Type 'string' is not assignable to type '"email_verification" | "password_reset" | "two_factor"'.
+
+    192       const verificationCode = await storage.createVerificationCode(codeData);
+                                                                            ~~~~~~~~
+
+ FAIL  tests/unit/storage.test.ts
+  ● Test suite failed to run
+
+    tests/unit/storage.test.ts:136:45 - error TS2345: Argument of type '{ name: string; email: string; 
+passwordHash: string; isLawyer: boolean; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }'.
+      Type '{ name: string; email: string; passwordHash: string; isLawyer: boolean; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; 
+lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    136       const user = await storage.createUser(userData);
+                                                    ~~~~~~~~
+    tests/unit/storage.test.ts:171:45 - error TS2345: Argument of type '{ name: string; email: string; 
+passwordHash: string; isLawyer: boolean; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }'.
+      Type '{ name: string; email: string; passwordHash: string; isLawyer: boolean; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; 
+lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    171       const user = await storage.createUser(userData);
+                                                    ~~~~~~~~
+    tests/unit/storage.test.ts:181:49 - error TS2345: Argument of type '{ userId: string; specialization: string; location: string; licenseNumber: string; experience: number; languages: string[]; }' is not 
+assignable to parameter of type '{ location: string; userId: string; licenseNumber: string; specialization: Json; experienceYears: number; languages: Json; hourlyRate?: string | null | undefined; bio?: string | null | undefined; ... 5 more ...; totalRatings?: number | ... 1 more ... | undefined; }'.
+      Property 'experienceYears' is missing in type '{ userId: string; specialization: string; location: string; licenseNumber: string; experience: number; languages: string[]; }' but required in type '{ location: string; userId: string; licenseNumber: string; specialization: Json; experienceYears: number; languages: Json; hourlyRate?: string | null | undefined; bio?: string | null | undefined; ... 5 more ...; totalRatings?: number | ... 1 more ... | undefined; }'.
+
+    181       const lawyer = await storage.createLawyer(lawyerData);
+                                                        ~~~~~~~~~~
+
+      shared/schema.ts:58:3
+        58   experienceYears: int("experience_years").notNull(),
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        'experienceYears' is declared here.
+    tests/unit/storage.test.ts:186:21 - error TS2339: Property 'experience' does not exist on type '{ id: string; location: string; createdAt: Date | null; updatedAt: Date | null; userId: string; licenseNumber: string; specialization: unknown; experienceYears: number; languages: unknown; hourlyRate: string | null; ... 6 more ...; totalRatings: number | null; }'.
+
+    186       expect(lawyer.experience).toBe(5);
+                            ~~~~~~~~~~
+    tests/unit/storage.test.ts:191:59 - error TS2345: Argument of type '{ name: string; email: string; 
+passwordHash: string; isLawyer: true; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; 
+role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }'.
+      Type '{ name: string; email: string; passwordHash: string; isLawyer: true; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    191       const contractLawyerUser = await storage.createUser({
+                                                                  ~
+    192         name: 'Contract Lawyer',
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ...
+    195         isLawyer: true
+        ~~~~~~~~~~~~~~~~~~~~~~
+    196       });
+        ~~~~~~~
+    tests/unit/storage.test.ts:198:59 - error TS2345: Argument of type '{ name: string; email: string; 
+passwordHash: string; isLawyer: true; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; 
+role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }'.
+      Type '{ name: string; email: string; passwordHash: string; isLawyer: true; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    198       const criminalLawyerUser = await storage.createUser({
+                                                                  ~
+    199         name: 'Criminal Lawyer',
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ...
+    202         isLawyer: true
+        ~~~~~~~~~~~~~~~~~~~~~~
+    203       });
+        ~~~~~~~
+    tests/unit/storage.test.ts:210:9 - error TS2353: Object literal may only specify known properties, 
+and 'experience' does not exist in type '{ location: string; userId: string; licenseNumber: string; specialization: Json; experienceYears: number; languages: Json; hourlyRate?: string | null | undefined; bio?: string | null | undefined; ... 5 more ...; totalRatings?: number | ... 1 more ... | undefined; }'. 
+
+    210         experience: 3,
+                ~~~~~~~~~~
+    tests/unit/storage.test.ts:219:9 - error TS2353: Object literal may only specify known properties, 
+and 'experience' does not exist in type '{ location: string; userId: string; licenseNumber: string; specialization: Json; experienceYears: number; languages: Json; hourlyRate?: string | null | undefined; bio?: string | null | undefined; ... 5 more ...; totalRatings?: number | ... 1 more ... | undefined; }'. 
+
+    219         experience: 7,
+                ~~~~~~~~~~
+    tests/unit/storage.test.ts:241:45 - error TS2345: Argument of type '{ name: string; email: string; 
+passwordHash: string; isLawyer: boolean; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }'.
+      Type '{ name: string; email: string; passwordHash: string; isLawyer: boolean; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; 
+lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }': firstName, lastName
+
+    241       const user = await storage.createUser(userData);
+                                                    ~~~~~~~~
+    tests/unit/storage.test.ts:248:69 - error TS2345: Argument of type '{ userId: string; type: string; code: string; }' is not assignable to parameter of type '{ code: string; type: "email_verification" | 
+"password_reset" | "two_factor"; userId: string; expiresAt: Date; used?: boolean | null | undefined; }'.
+      Property 'expiresAt' is missing in type '{ userId: string; type: string; code: string; }' but required in type '{ code: string; type: "email_verification" | "password_reset" | "two_factor"; userId: string; expiresAt: Date; used?: boolean | null | undefined; }'.
+
+    248       const verificationCode = await storage.createVerificationCode(codeData);
+                                                                            ~~~~~~~~
+
+      shared/schema.ts:89:3
+        89   expiresAt: timestamp("expires_at").notNull(),
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        'expiresAt' is declared here.
+    tests/unit/storage.test.ts:268:28 - error TS2345: Argument of type '{ name: string; email: string; 
+passwordHash: string; isLawyer: false; }' is not assignable to parameter of type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... | undefined; }'.
+      Type '{ name: string; email: string; passwordHash: string; isLawyer: false; }' is missing the following properties from type '{ name: string; email: string; passwordHash: string; firstName: string; lastName: string; phone?: string | null | undefined; role?: "user" | "lawyer" | "admin" | null | undefined; isLawyer?: boolean | ... 1 more ... | undefined; ... 7 more ...; lastActive?: Date | ... 1 more ... 
+| undefined; }': firstName, lastName
+
+    268         storage.createUser({
+                                   ~
+    269           name: `User ${i}`,
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ...
+    272           isLawyer: false
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+    273         })
+        ~~~~~~~~~
+
+Test Suites: 7 failed, 1 passed, 8 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        58.997 s
+Ran all test suites.
+PS C:\Users\USER\Desktop\LegalNavigator> 

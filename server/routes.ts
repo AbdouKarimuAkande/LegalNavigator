@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { WebSocketServer, WebSocket } from "ws";
-import { initializeStorage } from "./storage.js";
+import { initializeStorage } from "./storage";
 import { aiLegalService } from "./ai-service";
 import { twoFactorService } from "./2fa-service";
 import { metricsHandler, healthHandler, metricsCollector } from "./metrics";

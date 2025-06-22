@@ -180,7 +180,7 @@ class MemStorage implements IStorage {
   async getChatMessages(sessionId: string): Promise<ChatMessage[]> {
     return Array.from(this.chatMessages.values())
       .filter(message => message.sessionId === sessionId)
-      .sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
+      .sort((a, b) => (a.createdAt?.getTime() || 0) - (b.createdAt?.getTime() || 0));
   }
 
   // Lawyer operations
@@ -189,6 +189,14 @@ class MemStorage implements IStorage {
       id: nanoid(),
       createdAt: new Date(),
       updatedAt: new Date(),
+      hourlyRate: null,
+      bio: null,
+      education: null,
+      certifications: null,
+      availabilitySchedule: null,
+      isVerified: false,
+      rating: "0.0",
+      totalRatings: 0,
       ...lawyer,
     };
     this.lawyers.set(newLawyer.id, newLawyer);
@@ -206,15 +214,17 @@ class MemStorage implements IStorage {
     if (filters) {
       if (filters.specialization) {
         lawyers = lawyers.filter(lawyer => 
-          lawyer.specialization.toLowerCase().includes(filters.specialization!.toLowerCase())
+          Array.isArray(lawyer.specialization) && 
+          lawyer.specialization.some((spec: any) => spec.toLowerCase().includes(filters.specialization!.toLowerCase()))
         );
       }
       if (filters.minRating) {
-        lawyers = lawyers.filter(lawyer => lawyer.rating >= filters.minRating!);
+        lawyers = lawyers.filter(lawyer => parseFloat(lawyer.rating || "0") >= filters.minRating!);
       }
       if (filters.language) {
         lawyers = lawyers.filter(lawyer => 
-          lawyer.languages.some(lang => lang.toLowerCase().includes(filters.language!.toLowerCase()))
+          Array.isArray(lawyer.languages) &&
+          lawyer.languages.some((lang: any) => lang.toLowerCase().includes(filters.language!.toLowerCase()))
         );
       }
     }
@@ -233,7 +243,7 @@ class MemStorage implements IStorage {
       }
     }
 
-    return results.sort((a, b) => b.rating - a.rating);
+    return results.sort((a, b) => parseFloat(b.rating || "0") - parseFloat(a.rating || "0"));
   }
 
   async getLawyer(id: string): Promise<(Lawyer & { user: User }) | undefined> {
@@ -265,7 +275,10 @@ class MemStorage implements IStorage {
     const newRating: LawyerRating = {
       id: nanoid(),
       createdAt: new Date(),
-      ...rating,
+      userId: rating.userId,
+      lawyerId: rating.lawyerId,
+      rating: rating.rating,
+      review: rating.review || null,
     };
     this.lawyerRatings.set(newRating.id, newRating);
     return newRating;
@@ -274,7 +287,7 @@ class MemStorage implements IStorage {
   async getLawyerRatings(lawyerId: string): Promise<LawyerRating[]> {
     return Array.from(this.lawyerRatings.values())
       .filter(rating => rating.lawyerId === lawyerId)
-      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+      .sort((a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0));
   }
 
   // Verification operations
@@ -282,7 +295,11 @@ class MemStorage implements IStorage {
     const newCode: VerificationCode = {
       id: nanoid(),
       createdAt: new Date(),
-      ...code,
+      userId: code.userId,
+      code: code.code,
+      type: code.type,
+      expiresAt: code.expiresAt,
+      used: code.used ?? false,
     };
     this.verificationCodes.set(newCode.id, newCode);
     return newCode;
@@ -315,7 +332,11 @@ class MemStorage implements IStorage {
     const newNotification: Notification = {
       id: nanoid(),
       createdAt: new Date(),
-      ...notification,
+      userId: notification.userId,
+      title: notification.title,
+      message: notification.message,
+      type: notification.type ?? "info",
+      readStatus: notification.readStatus ?? false,
     };
     this.notifications.set(newNotification.id, newNotification);
     return newNotification;
@@ -324,13 +345,13 @@ class MemStorage implements IStorage {
   async getUserNotifications(userId: string): Promise<Notification[]> {
     return Array.from(this.notifications.values())
       .filter(notification => notification.userId === userId)
-      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+      .sort((a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0));
   }
 
   async markNotificationRead(id: string): Promise<void> {
     const notification = this.notifications.get(id);
     if (notification) {
-      this.notifications.set(id, { ...notification, read: true });
+      this.notifications.set(id, { ...notification, readStatus: true });
     }
   }
 }

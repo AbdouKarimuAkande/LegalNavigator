@@ -701,7 +701,7 @@ graph TB
     
     %% External Services
     subgraph "External Services"
-        OPENAI[🧠 OpenAI API]
+        CUSTOM_AI[🧠 Custom Legal AI Model]
         FORMSUBMIT[📮 FormSubmit Email]
         TOTP_SERVICE[🔢 TOTP Services]
     end
@@ -781,7 +781,7 @@ graph TB
     CONNECTION_POOL --> REPLICA_DB
     
     %% External Service Connections
-    AI_SVC --> OPENAI
+    AI_SVC --> CUSTOM_AI
     EMAIL_SVC --> FORMSUBMIT
     TFA_SVC --> TOTP_SERVICE
     
@@ -825,7 +825,7 @@ graph TB
     class CHAT_LOGIC,LAWYER_LOGIC,USER_LOGIC,NOTIFICATION_LOGIC,SEARCH_LOGIC businessStyle
     class STORAGE_INTERFACE,ORM,CONNECTION_POOL,MIGRATION dataStyle
     class PRIMARY_DB,REPLICA_DB,BACKUP_DB dbStyle
-    class OPENAI,FORMSUBMIT,TOTP_SERVICE externalStyle
+    class CUSTOM_AI,FORMSUBMIT,TOTP_SERVICE externalStyle
     class METRICS,LOGS,HEALTH,ALERTS monitorStyle
     class WAF,DDoS,ENCRYPTION,AUDIT securityStyle
 ```
@@ -856,7 +856,7 @@ The application layer contains the core business logic and API services implemen
 - **Express.js API Server**: RESTful API endpoints for all system operations
 - **WebSocket Server**: Real-time communication for chat functionality
 - **Authentication Service**: JWT-based authentication with 2FA support
-- **AI Integration Service**: OpenAI API integration for legal assistance
+- **AI Integration Service**: Custom trained AI model for legal assistance
 - **Email Service**: FormSubmit integration for email notifications
 - **File Upload Service**: Secure file handling for documents and images
 
@@ -886,7 +886,7 @@ The data layer manages all persistent data storage and retrieval operations.
 **4. External Integration Layer**
 
 *External Services:*
-- **OpenAI API**: Large language model for legal assistance
+- **Custom Legal AI Model**: Specialized model trained on Cameroon legal corpus
 - **FormSubmit**: Email delivery service for notifications
 - **TOTP Services**: Authenticator app integration for 2FA
 
@@ -927,7 +927,7 @@ src/
 server/
 ├── routes/              # Express route definitions
 ├── services/            # Business logic services
-│   ├── ai-service.ts    # AI/OpenAI integration
+│   ├── ai-service.ts    # Custom AI model integration
 │   ├── auth-service.ts  # Authentication logic
 │   ├── 2fa-service.ts   # Two-factor authentication
 │   └── email-service.ts # Email notifications
@@ -1187,26 +1187,29 @@ flowchart TD
     B --> C[Send question to AI Service]
     C --> D[AI Service processes question]
     D --> E[Categorize legal domain]
-    E --> F[Generate contextual prompt]
-    F --> G[Send prompt to OpenAI API]
-    G --> H[Receive AI response]
-    H --> I[Process and validate response]
-    I --> J[Add legal disclaimers]
-    J --> K[Calculate confidence score]
-    K --> L[Save AI response to database]
-    L --> M[Broadcast response via WebSocket]
-    M --> N[Display response to user]
-    N --> O{Confidence score < threshold?}
-    O -->|Yes| P[Suggest contacting human lawyer]
-    P --> Q[Display lawyer recommendations]
-    O -->|No| R[Offer follow-up questions]
-    Q --> S[Update chat session metadata]
-    R --> S
-    S --> End([End])
+    E --> F[Build Cameroon law context]
+    F --> G[Prepare specialized legal prompt]
+    G --> H[Send to Custom Trained AI Model]
+    H --> I[Custom AI processes with legal expertise]
+    I --> J[Receive specialized legal response]
+    J --> K[Validate response quality]
+    K --> L[Add legal disclaimers]
+    L --> M[Calculate confidence score]
+    M --> N[Save AI response to database]
+    N --> O[Broadcast response via WebSocket]
+    O --> P[Display response to user]
+    P --> Q{Confidence score < threshold?}
+    Q -->|Yes| R[Suggest contacting human lawyer]
+    R --> S[Display lawyer recommendations]
+    Q -->|No| T[Offer follow-up questions]
+    S --> U[Update chat session metadata]
+    T --> U
+    U --> End([End])
     
     %% Notes
     E -.-> E1[Criminal, Family, Property,<br/>Business, Employment, Constitutional]
-    F -.-> F1[Include Cameroon law context<br/>and legal disclaimers]
+    F -.-> F1[Include Cameroon legal precedents,<br/>statutes, and case law]
+    H -.-> H1[Custom AI Model<br/>Future Integration Point]
 ```
 
 ### 5. Sequence Diagram - Chatbot Messaging Flow
@@ -1218,8 +1221,8 @@ sequenceDiagram
     participant WebSocket as WS
     participant API as API
     participant AIService as AI
+    participant CustomModel as CM
     participant Database as DB
-    participant OpenAI
 
     User->>FE: Type legal question
     FE->>FE: Validate input
@@ -1231,13 +1234,18 @@ sequenceDiagram
     API->>AI: Process legal query
     AI->>AI: Categorize legal domain
     AI->>AI: Build Cameroon law context
-    AI->>OpenAI: Send contextual prompt
-    OpenAI-->>AI: Return AI response
+    AI->>AI: Prepare legal prompt with context
+    
+    AI->>CM: Send query to custom trained model
+    Note over CM: Custom AI model trained on<br/>Cameroon legal corpus
+    CM->>CM: Process with legal domain knowledge
+    CM->>CM: Apply Cameroon law expertise
+    CM-->>AI: Return specialized legal response
     
     AI->>AI: Validate response quality
     AI->>AI: Add legal disclaimers
     AI->>AI: Calculate confidence score
-    AI->>DB: Save AI response
+    AI->>DB: Save AI response with metadata
     DB-->>AI: Response saved
     
     AI-->>API: Return processed response
@@ -1253,6 +1261,8 @@ sequenceDiagram
         FE->>FE: Show follow-up suggestions
         FE-->>User: Display suggested follow-up questions
     end
+    
+    Note over AI,CM: Future integration point for<br/>custom trained legal AI model
 ```
 
 ### 6. Sequence Diagram - Chat History Viewing
@@ -1572,7 +1582,7 @@ Features are considered complete when:
 **Technical Challenges**
 
 *Challenge 1: AI Integration Complexity*
-- **Description**: Initial difficulties integrating OpenAI API with legal context requirements
+- **Description**: Initial difficulties designing custom AI model integration with legal context requirements
 - **Impact**: Delayed sprint delivery and increased technical debt
 - **Resolution**: 
   - Dedicated spike story for AI service research and prototyping
@@ -1737,7 +1747,7 @@ Features are considered complete when:
    - Tasks: 12 (2FA UI, Email 2FA backend, TOTP integration, QR code generation, Backup codes, Security testing, Documentation, User guide, Integration testing, Performance testing, Security audit, Deployment)
 
 2. **AI Service Foundation** (8 SP)
-   - OpenAI API integration setup
+   - Custom AI model integration setup
    - Basic prompt engineering for legal context
    - Error handling and fallback mechanisms
    - Tasks: 5 (API integration, Prompt development, Error handling, Testing, Documentation)
@@ -2727,11 +2737,12 @@ def determine_delivery_strategy(priority_score, system_load):
 
 ### External Service Integrations
 
-**OpenAI API**
-- **Role**: Large language model for AI legal assistance
-- **Model**: GPT-4 and GPT-3.5-turbo
-- **Justification**: State-of-the-art language understanding, legal reasoning capabilities
-- **Usage**: Legal query processing, response generation, content analysis
+**Custom Legal AI Model**
+- **Role**: Specialized AI model for Cameroon legal assistance
+- **Model**: Custom trained model on legal corpus (future integration)
+- **Justification**: Domain-specific expertise, Cameroon law specialization, enhanced accuracy
+- **Usage**: Legal query processing, specialized legal response generation, case analysis
+- **Note**: Currently using placeholder service - custom model integration planned
 
 **FormSubmit.co**
 - **Role**: Email delivery service for notifications and verification

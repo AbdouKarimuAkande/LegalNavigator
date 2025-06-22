@@ -744,292 +744,268 @@ server/
 ### 1. Use Case Diagram
 
 ```mermaid
-@startuml
-!theme plain
-
-actor "Citizen" as citizen
-actor "Lawyer" as lawyer
-actor "Administrator" as admin
-
-rectangle "LawHelp System" {
-  usecase "Register Account" as UC1
-  usecase "Login" as UC2
-  usecase "Setup 2FA" as UC3
-  usecase "Ask Legal Question" as UC4
-  usecase "Chat with AI" as UC5
-  usecase "Browse Lawyers" as UC6
-  usecase "Contact Lawyer" as UC7
-  usecase "Rate Lawyer" as UC8
-  usecase "View Chat History" as UC9
-  
-  usecase "Create Lawyer Profile" as UC10
-  usecase "Update Professional Info" as UC11
-  usecase "Respond to Inquiries" as UC12
-  usecase "View Client Messages" as UC13
-  
-  usecase "Verify Lawyer Credentials" as UC14
-  usecase "Manage System Settings" as UC15
-  usecase "Monitor System Activity" as UC16
-}
-
-citizen --> UC1
-citizen --> UC2
-citizen --> UC3
-citizen --> UC4
-citizen --> UC5
-citizen --> UC6
-citizen --> UC7
-citizen --> UC8
-citizen --> UC9
-
-lawyer --> UC1
-lawyer --> UC2
-lawyer --> UC3
-lawyer --> UC10
-lawyer --> UC11
-lawyer --> UC12
-lawyer --> UC13
-
-admin --> UC2
-admin --> UC14
-admin --> UC15
-admin --> UC16
-
-@enduml
+graph TB
+    subgraph "Actors"
+        Citizen[👤 Citizen]
+        Lawyer[⚖️ Lawyer]
+        Admin[👨‍💼 Administrator]
+    end
+    
+    subgraph "LawHelp System"
+        subgraph "Authentication"
+            UC1[Register Account]
+            UC2[Login]
+            UC3[Setup 2FA]
+        end
+        
+        subgraph "Legal Assistance"
+            UC4[Ask Legal Question]
+            UC5[Chat with AI]
+            UC6[Browse Lawyers]
+            UC7[Contact Lawyer]
+            UC8[Rate Lawyer]
+            UC9[View Chat History]
+        end
+        
+        subgraph "Lawyer Management"
+            UC10[Create Lawyer Profile]
+            UC11[Update Professional Info]
+            UC12[Respond to Inquiries]
+            UC13[View Client Messages]
+        end
+        
+        subgraph "Administration"
+            UC14[Verify Lawyer Credentials]
+            UC15[Manage System Settings]
+            UC16[Monitor System Activity]
+        end
+    end
+    
+    Citizen --> UC1
+    Citizen --> UC2
+    Citizen --> UC3
+    Citizen --> UC4
+    Citizen --> UC5
+    Citizen --> UC6
+    Citizen --> UC7
+    Citizen --> UC8
+    Citizen --> UC9
+    
+    Lawyer --> UC1
+    Lawyer --> UC2
+    Lawyer --> UC3
+    Lawyer --> UC10
+    Lawyer --> UC11
+    Lawyer --> UC12
+    Lawyer --> UC13
+    
+    Admin --> UC2
+    Admin --> UC14
+    Admin --> UC15
+    Admin --> UC16
 ```
 
 ### 2. Class Diagram
 
 ```mermaid
-@startuml
-!theme plain
+classDiagram
+    class User {
+        +String id
+        +String email
+        +String name
+        +String passwordHash
+        +Boolean isLawyer
+        +Boolean twoFactorEnabled
+        +String twoFactorMethod
+        +String twoFactorSecret
+        +String phone
+        +String location
+        +String profileImageUrl
+        +Boolean emailVerified
+        +Date createdAt
+        +Date updatedAt
+        +Date lastActive
+        +register()
+        +login()
+        +setupTwoFactor()
+        +verifyEmail()
+        +updateProfile()
+    }
 
-class User {
-  +id: string
-  +email: string
-  +name: string
-  +passwordHash: string
-  +isLawyer: boolean
-  +twoFactorEnabled: boolean
-  +twoFactorMethod: string
-  +twoFactorSecret: string
-  +phone: string
-  +location: string
-  +profileImageUrl: string
-  +emailVerified: boolean
-  +createdAt: Date
-  +updatedAt: Date
-  +lastActive: Date
-  --
-  +register()
-  +login()
-  +setupTwoFactor()
-  +verifyEmail()
-  +updateProfile()
-}
+    class ChatSession {
+        +String id
+        +String userId
+        +String title
+        +String status
+        +Date createdAt
+        +Date updatedAt
+        +createSession()
+        +updateTitle()
+        +archiveSession()
+    }
 
-class ChatSession {
-  +id: string
-  +userId: string
-  +title: string
-  +status: string
-  +createdAt: Date
-  +updatedAt: Date
-  --
-  +createSession()
-  +updateTitle()
-  +archiveSession()
-}
+    class ChatMessage {
+        +String id
+        +String sessionId
+        +String userId
+        +String content
+        +String sender
+        +Object metadata
+        +Date createdAt
+        +sendMessage()
+        +editMessage()
+        +deleteMessage()
+    }
 
-class ChatMessage {
-  +id: string
-  +sessionId: string
-  +userId: string
-  +content: string
-  +sender: string
-  +metadata: object
-  +createdAt: Date
-  --
-  +sendMessage()
-  +editMessage()
-  +deleteMessage()
-}
+    class Lawyer {
+        +String id
+        +String userId
+        +String licenseNumber
+        +String specialization
+        +Number experienceYears
+        +String[] practiceAreas
+        +String[] languages
+        +String officeAddress
+        +String description
+        +Number hourlyRate
+        +Boolean verified
+        +Number rating
+        +Number totalReviews
+        +Date createdAt
+        +Date updatedAt
+        +createProfile()
+        +updateProfile()
+        +verifyCredentials()
+        +setAvailability()
+    }
 
-class Lawyer {
-  +id: string
-  +userId: string
-  +licenseNumber: string
-  +specialization: string
-  +experienceYears: number
-  +practiceAreas: string[]
-  +languages: string[]
-  +officeAddress: string
-  +description: string
-  +hourlyRate: number
-  +verified: boolean
-  +rating: number
-  +totalReviews: number
-  +createdAt: Date
-  +updatedAt: Date
-  --
-  +createProfile()
-  +updateProfile()
-  +verifyCredentials()
-  +setAvailability()
-}
+    class LawyerRating {
+        +String id
+        +String lawyerId
+        +String userId
+        +Number rating
+        +String review
+        +Date createdAt
+        +submitRating()
+        +updateRating()
+        +deleteRating()
+    }
 
-class LawyerRating {
-  +id: string
-  +lawyerId: string
-  +userId: string
-  +rating: number
-  +review: string
-  +createdAt: Date
-  --
-  +submitRating()
-  +updateRating()
-  +deleteRating()
-}
+    class VerificationCode {
+        +String id
+        +String userId
+        +String code
+        +String type
+        +Boolean used
+        +Date expiresAt
+        +Date createdAt
+        +generateCode()
+        +verifyCode()
+        +markUsed()
+    }
 
-class VerificationCode {
-  +id: string
-  +userId: string
-  +code: string
-  +type: string
-  +used: boolean
-  +expiresAt: Date
-  +createdAt: Date
-  --
-  +generateCode()
-  +verifyCode()
-  +markUsed()
-}
+    class Notification {
+        +String id
+        +String userId
+        +String title
+        +String content
+        +String type
+        +Boolean read
+        +Date createdAt
+        +createNotification()
+        +markAsRead()
+        +deleteNotification()
+    }
 
-class Notification {
-  +id: string
-  +userId: string
-  +title: string
-  +content: string
-  +type: string
-  +read: boolean
-  +createdAt: Date
-  --
-  +createNotification()
-  +markAsRead()
-  +deleteNotification()
-}
-
-User ||--o{ ChatSession : creates
-User ||--o{ ChatMessage : sends
-User ||--o| Lawyer : "can be"
-User ||--o{ LawyerRating : gives
-User ||--o{ VerificationCode : receives
-User ||--o{ Notification : receives
-
-ChatSession ||--o{ ChatMessage : contains
-Lawyer ||--o{ LawyerRating : receives
-
-@enduml
+    User ||--o{ ChatSession : creates
+    User ||--o{ ChatMessage : sends
+    User ||--o| Lawyer : "can be"
+    User ||--o{ LawyerRating : gives
+    User ||--o{ VerificationCode : receives
+    User ||--o{ Notification : receives
+    ChatSession ||--o{ ChatMessage : contains
+    Lawyer ||--o{ LawyerRating : receives
 ```
 
 ### 3. Sequence Diagram - User Authentication Flow
 
 ```mermaid
-@startuml
-!theme plain
+sequenceDiagram
+    participant User
+    participant Frontend as FE
+    participant API as API
+    participant Database as DB
+    participant Email as Email
+    participant TOTP as TOTP
 
-participant User
-participant "Frontend" as FE
-participant "API Server" as API
-participant "Database" as DB
-participant "Email Service" as Email
-participant "TOTP Service" as TOTP
+    User->>FE: Enter login credentials
+    FE->>API: POST /auth/login
+    API->>DB: Verify user credentials
+    DB-->>API: User data with 2FA settings
 
-User -> FE: Enter login credentials
-FE -> API: POST /auth/login
-API -> DB: Verify user credentials
-DB --> API: User data with 2FA settings
+    alt 2FA Enabled - Email Method
+        API->>DB: Create verification code
+        DB-->>API: Code created
+        API->>Email: Send verification email
+        Email-->>API: Email sent confirmation
+        API-->>FE: Requires 2FA verification
+        FE-->>User: Show 2FA input form
+        User->>FE: Enter verification code
+        FE->>API: POST /auth/verify-2fa
+        API->>DB: Verify code
+        DB-->>API: Code validation result
+    else 2FA Enabled - TOTP Method
+        API-->>FE: Requires TOTP verification
+        FE-->>User: Show TOTP input form
+        User->>TOTP: Generate TOTP code
+        TOTP-->>User: Display code
+        User->>FE: Enter TOTP code
+        FE->>API: POST /auth/verify-2fa
+        API->>API: Verify TOTP code
+    else No 2FA
+        API->>API: Generate JWT token
+    end
 
-alt 2FA Enabled - Email Method
-  API -> DB: Create verification code
-  DB --> API: Code created
-  API -> Email: Send verification email
-  Email --> API: Email sent confirmation
-  API --> FE: Requires 2FA verification
-  FE --> User: Show 2FA input form
-  User -> FE: Enter verification code
-  FE -> API: POST /auth/verify-2fa
-  API -> DB: Verify code
-  DB --> API: Code validation result
-else 2FA Enabled - TOTP Method
-  API --> FE: Requires TOTP verification
-  FE --> User: Show TOTP input form
-  User -> TOTP: Generate TOTP code
-  TOTP --> User: Display code
-  User -> FE: Enter TOTP code
-  FE -> API: POST /auth/verify-2fa
-  API -> API: Verify TOTP code
-else No 2FA
-  API -> API: Generate JWT token
-end
-
-alt 2FA Verification Successful
-  API -> API: Generate JWT token
-  API --> FE: Return JWT token + user data
-  FE -> FE: Store token in localStorage
-  FE --> User: Redirect to dashboard
-else 2FA Verification Failed
-  API --> FE: Return error message
-  FE --> User: Show error and retry option
-end
-
-@enduml
+    alt 2FA Verification Successful
+        API->>API: Generate JWT token
+        API-->>FE: Return JWT token + user data
+        FE->>FE: Store token in localStorage
+        FE-->>User: Redirect to dashboard
+    else 2FA Verification Failed
+        API-->>FE: Return error message
+        FE-->>User: Show error and retry option
+    end
 ```
 
 ### 4. Activity Diagram - AI Legal Query Processing
 
 ```mermaid
-@startuml
-!theme plain
-
-start
-
-:User enters legal question;
-:Create new chat session or use existing;
-:Save user message to database;
-
-:Send question to AI Service;
-:AI Service processes question;
-
-:Categorize legal domain|
-note right: Criminal, Family, Property, Business, Employment, Constitutional
-
-:Generate contextual prompt;
-note right: Include Cameroon law context and legal disclaimers
-
-:Send prompt to OpenAI API;
-:Receive AI response;
-
-:Process and validate response;
-:Add legal disclaimers;
-:Calculate confidence score;
-
-:Save AI response to database;
-:Broadcast response via WebSocket;
-:Display response to user;
-
-if (Confidence score < threshold?) then (yes)
-  :Suggest contacting human lawyer;
-  :Display lawyer recommendations;
-else (no)
-  :Offer follow-up questions;
-endif
-
-:Update chat session metadata;
-
-stop
-
-@enduml
+flowchart TD
+    Start([User enters legal question]) --> A[Create new chat session or use existing]
+    A --> B[Save user message to database]
+    B --> C[Send question to AI Service]
+    C --> D[AI Service processes question]
+    D --> E[Categorize legal domain]
+    E --> F[Generate contextual prompt]
+    F --> G[Send prompt to OpenAI API]
+    G --> H[Receive AI response]
+    H --> I[Process and validate response]
+    I --> J[Add legal disclaimers]
+    J --> K[Calculate confidence score]
+    K --> L[Save AI response to database]
+    L --> M[Broadcast response via WebSocket]
+    M --> N[Display response to user]
+    N --> O{Confidence score < threshold?}
+    O -->|Yes| P[Suggest contacting human lawyer]
+    P --> Q[Display lawyer recommendations]
+    O -->|No| R[Offer follow-up questions]
+    Q --> S[Update chat session metadata]
+    R --> S
+    S --> End([End])
+    
+    %% Notes
+    E -.-> E1[Criminal, Family, Property,<br/>Business, Employment, Constitutional]
+    F -.-> F1[Include Cameroon law context<br/>and legal disclaimers]
 ```
 
 ## Application of Scrum

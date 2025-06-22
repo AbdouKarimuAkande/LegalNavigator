@@ -917,14 +917,14 @@ classDiagram
         +deleteNotification()
     }
 
-    User ||--o{ ChatSession : creates
-    User ||--o{ ChatMessage : sends
-    User ||--o| Lawyer : "can be"
-    User ||--o{ LawyerRating : gives
-    User ||--o{ VerificationCode : receives
-    User ||--o{ Notification : receives
-    ChatSession ||--o{ ChatMessage : contains
-    Lawyer ||--o{ LawyerRating : receives
+    User ||--o{ ChatSession
+    User ||--o{ ChatMessage
+    User ||--|| Lawyer
+    User ||--o{ LawyerRating
+    User ||--o{ VerificationCode
+    User ||--o{ Notification
+    ChatSession ||--o{ ChatMessage
+    Lawyer ||--o{ LawyerRating
 ```
 
 ### 3. Sequence Diagram - User Authentication Flow

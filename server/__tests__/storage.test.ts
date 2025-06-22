@@ -1,6 +1,5 @@
 import { storage } from '../storage';
 import { insertUserSchema, insertChatSessionSchema, insertChatMessageSchema } from '../../shared/schema';
-import { describe, it, beforeEach, expect } from '@jest/globals';
 
 describe('Storage Layer Tests', () => {
   beforeEach(() => {
@@ -15,11 +14,9 @@ describe('Storage Layer Tests', () => {
   describe('User Operations', () => {
     it('should create a new user', async () => {
       const userData = {
-        name: 'Test User',
         email: 'test@example.com',
+        name: 'Test User',
         passwordHash: 'hashedpassword123',
-        firstName: 'Test',
-        lastName: 'User',
         isLawyer: false,
         twoFactorEnabled: false,
         emailVerified: false
@@ -36,11 +33,9 @@ describe('Storage Layer Tests', () => {
 
     it('should retrieve user by email', async () => {
       const userData = {
-        name: 'Test User',
         email: 'test@example.com',
+        name: 'Test User',
         passwordHash: 'hashedpassword123',
-        firstName: 'Test',
-        lastName: 'User',
         isLawyer: false,
         twoFactorEnabled: false,
         emailVerified: false
@@ -55,11 +50,9 @@ describe('Storage Layer Tests', () => {
 
     it('should update user information', async () => {
       const userData = {
-        name: 'Test User',
         email: 'test@example.com',
+        name: 'Test User',
         passwordHash: 'hashedpassword123',
-        firstName: 'Test',
-        lastName: 'User',
         isLawyer: false,
         twoFactorEnabled: false,
         emailVerified: false

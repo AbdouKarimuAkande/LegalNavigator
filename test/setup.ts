@@ -1,23 +1,37 @@
 import '@testing-library/jest-dom';
 
-// Global test setup
-global.console = {
-  ...console,
-  // Uncomment to silence console logs during tests
-  // log: jest.fn(),
-  // debug: jest.fn(),
-  // info: jest.fn(),
-  // warn: jest.fn(),
-  // error: jest.fn(),
-};
+// Mock WebSocket
+global.WebSocket = jest.fn(() => ({
+  send: jest.fn(),
+  close: jest.fn(),
+  addEventListener: jest.fn(),
+  removeEventListener: jest.fn(),
+})) as any;
 
-// Mock fetch for Node.js environment
+// Mock fetch
 global.fetch = jest.fn();
 
-// Mock TextEncoder/TextDecoder for Node.js environment
-global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
+// Mock localStorage
+const localStorageMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+  removeItem: jest.fn(),
+  clear: jest.fn(),
+};
+global.localStorage = localStorageMock as any;
 
-// Setup environment variables for tests
-process.env.JWT_SECRET = 'test-jwt-secret';
+// Mock process.env for tests
+process.env.JWT_SECRET = 'test-secret';
 process.env.NODE_ENV = 'test';
+
+// Suppress console.log in tests unless debugging
+if (process.env.NODE_ENV === 'test') {
+  global.console = {
+    ...console,
+    log: jest.fn(),
+    debug: jest.fn(),
+    info: jest.fn(),
+    warn: jest.fn(),
+    error: jest.fn(),
+  };
+}

@@ -1,19 +1,13 @@
 export default {
   preset: 'ts-jest',
-  testEnvironment: 'jsdom',
+  testEnvironment: 'node',
   setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/client/src/$1',
     '^@shared/(.*)$': '<rootDir>/shared/$1'
   },
-  transformIgnorePatterns: [
-    'node_modules/(?!(wouter|node-fetch|@noble|@paralleldrive)/)'
-  ],
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
-  globals: {
-    'ts-jest': {
-      useESM: true
-    }
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest'
   },
   collectCoverageFrom: [
     'server/**/*.{ts,tsx}',
@@ -35,9 +29,10 @@ export default {
     '<rootDir>/**/__tests__/**/*.{ts,tsx}',
     '<rootDir>/**/*.(test|spec).{ts,tsx}'
   ],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest'
-  },
+  testTimeout: 30000,
+  maxWorkers: 1,
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/']
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
+  forceExit: true,
+  detectOpenHandles: true
 };

@@ -1,0 +1,628 @@
+PS C:\Users\USER\Desktop\LegalNavigator> npm test
+
+> rest-express@1.0.0 test
+> jest
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+ts-jest[ts-jest-transformer] (WARN) Define `ts-jest` config under `globals` is deprecated. Please do
+transform: {
+    <transform_regex>: ['ts-jest', { /* ts-jest config goes here in Jest */ }],
+},
+See more at https://kulshekhar.github.io/ts-jest/docs/getting-started/presets#advanced
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ FAIL  server/__tests__/routes.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+  ● Test suite failed to run
+
+    ReferenceError: TextEncoder is not defined
+
+      16 |
+      17 | // Mock TextEncoder/TextDecoder for Node.js environment
+    > 18 | global.TextEncoder = TextEncoder;
+         |                      ^
+      19 | global.TextDecoder = TextDecoder;
+      20 |
+      21 | // Setup environment variables for tests
+
+      at Object.<anonymous> (test/setup.ts:18:22)
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ FAIL  server/__tests__/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+  ● Test suite failed to run
+
+    ReferenceError: TextEncoder is not defined
+
+      16 |
+      17 | // Mock TextEncoder/TextDecoder for Node.js environment
+    > 18 | global.TextEncoder = TextEncoder;
+         |                      ^
+      19 | global.TextDecoder = TextDecoder;
+      20 |
+      21 | // Setup environment variables for tests
+
+      at Object.<anonymous> (test/setup.ts:18:22)
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ FAIL  tests/unit/storage.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+  ● Test suite failed to run
+
+    ReferenceError: TextEncoder is not defined
+
+      16 |
+      17 | // Mock TextEncoder/TextDecoder for Node.js environment
+    > 18 | global.TextEncoder = TextEncoder;
+         |                      ^
+      19 | global.TextDecoder = TextDecoder;
+      20 |
+      21 | // Setup environment variables for tests
+
+      at Object.<anonymous> (test/setup.ts:18:22)
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ FAIL  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+  ● Test suite failed to run
+
+    ReferenceError: TextEncoder is not defined
+
+      16 |
+      17 | // Mock TextEncoder/TextDecoder for Node.js environment
+    > 18 | global.TextEncoder = TextEncoder;
+         |                      ^
+      19 | global.TextDecoder = TextDecoder;
+      20 |
+      21 | // Setup environment variables for tests
+
+      at Object.<anonymous> (test/setup.ts:18:22)
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ FAIL  server/__tests__/ai-service.test.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+  ● Test suite failed to run
+
+    ReferenceError: TextEncoder is not defined
+
+      16 |
+      17 | // Mock TextEncoder/TextDecoder for Node.js environment
+    > 18 | global.TextEncoder = TextEncoder;
+         |                      ^
+      19 | global.TextDecoder = TextDecoder;
+      20 |
+      21 | // Setup environment variables for tests
+
+      at Object.<anonymous> (test/setup.ts:18:22)
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+
+ FAIL  server/__tests__/2fa-service.test.ts
+
+  ● Test suite failed to run
+
+    ReferenceError: TextEncoder is not defined
+
+      16 |
+      17 | // Mock TextEncoder/TextDecoder for Node.js environment
+    > 18 | global.TextEncoder = TextEncoder;
+         |                      ^
+      19 | global.TextDecoder = TextDecoder;
+      20 |
+      21 | // Setup environment variables for tests
+
+      at Object.<anonymous> (test/setup.ts:18:22)
+
+
+ FAIL  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+  ● Test suite failed to run
+
+    ReferenceError: TextEncoder is not defined
+
+      16 |
+      17 | // Mock TextEncoder/TextDecoder for Node.js environment
+    > 18 | global.TextEncoder = TextEncoder;
+         |                      ^
+      19 | global.TextDecoder = TextDecoder;
+      20 |
+      21 | // Setup environment variables for tests
+
+      at Object.<anonymous> (test/setup.ts:18:22)
+
+ FAIL  server/__tests__/integration/routes.integration.test.ts
+  ● Test suite failed to run
+
+    ReferenceError: TextEncoder is not defined
+
+      16 |
+      17 | // Mock TextEncoder/TextDecoder for Node.js environment
+    > 18 | global.TextEncoder = TextEncoder;
+         |                      ^
+      19 | global.TextDecoder = TextDecoder;
+      20 |
+      21 | // Setup environment variables for tests
+
+      at Object.<anonymous> (test/setup.ts:18:22)
+
+Test Suites: 8 failed, 8 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        70.996 s
+Ran all test suites.
+PS C:\Users\USER\Desktop\LegalNavigator> 

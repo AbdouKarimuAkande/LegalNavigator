@@ -629,6 +629,207 @@ The LawHelp system employs a modern, scalable architecture following microservic
 
 ### Architecture of Your System (High-Level Design)
 
+### Full System Architecture Diagram
+
+```mermaid
+graph TB
+    %% Client Layer
+    subgraph "Client Layer"
+        WEB[🌐 Web Browser]
+        MOBILE[📱 Mobile Browser]
+        PWA[📲 Progressive Web App]
+    end
+    
+    %% CDN and Load Balancing
+    subgraph "Edge Layer"
+        CDN[🌍 Content Delivery Network]
+        LB[⚖️ Load Balancer]
+        SSL[🔒 SSL/TLS Termination]
+    end
+    
+    %% Frontend Application
+    subgraph "Frontend Application"
+        REACT[⚛️ React 18 SPA]
+        ROUTER[🔀 Wouter Router]
+        STATE[🗂️ TanStack Query]
+        UI[🎨 Tailwind + shadcn/ui]
+        WS_CLIENT[🔗 WebSocket Client]
+    end
+    
+    %% API Gateway
+    subgraph "API Gateway Layer"
+        GATEWAY[🚪 API Gateway]
+        AUTH_MW[🔐 Auth Middleware]
+        RATE_LIMIT[⏱️ Rate Limiting]
+        VALIDATION[✅ Request Validation]
+    end
+    
+    %% Application Services
+    subgraph "Application Services"
+        API_SERVER[🖥️ Express.js API]
+        WS_SERVER[🔄 WebSocket Server]
+        AUTH_SVC[🔑 Authentication Service]
+        AI_SVC[🤖 AI Legal Service]
+        TFA_SVC[🛡️ 2FA Service]
+        EMAIL_SVC[📧 Email Service]
+        FILE_SVC[📁 File Service]
+    end
+    
+    %% Business Logic
+    subgraph "Business Logic Layer"
+        CHAT_LOGIC[💬 Chat Management]
+        LAWYER_LOGIC[⚖️ Lawyer Directory]
+        USER_LOGIC[👤 User Management]
+        NOTIFICATION_LOGIC[🔔 Notifications]
+        SEARCH_LOGIC[🔍 Search & Filter]
+    end
+    
+    %% Data Access Layer
+    subgraph "Data Access Layer"
+        STORAGE_INTERFACE[🗄️ Storage Interface]
+        ORM[🔄 Drizzle ORM]
+        CONNECTION_POOL[🏊 Connection Pool]
+        MIGRATION[📋 Migration System]
+    end
+    
+    %% Database Layer
+    subgraph "Database Layer"
+        PRIMARY_DB[(🗃️ MySQL Primary)]
+        REPLICA_DB[(📋 MySQL Replica)]
+        BACKUP_DB[(💾 Backup Storage)]
+    end
+    
+    %% External Services
+    subgraph "External Services"
+        OPENAI[🧠 OpenAI API]
+        FORMSUBMIT[📮 FormSubmit Email]
+        TOTP_SERVICE[🔢 TOTP Services]
+    end
+    
+    %% Monitoring & Logging
+    subgraph "Monitoring Layer"
+        METRICS[📊 Metrics Collection]
+        LOGS[📝 Application Logs]
+        HEALTH[❤️ Health Checks]
+        ALERTS[🚨 Alert System]
+    end
+    
+    %% Security Layer
+    subgraph "Security Layer"
+        WAF[🛡️ Web Application Firewall]
+        DDoS[🚫 DDoS Protection]
+        ENCRYPTION[🔐 Data Encryption]
+        AUDIT[📋 Audit Logging]
+    end
+    
+    %% Connections - Client to Edge
+    WEB --> CDN
+    MOBILE --> CDN
+    PWA --> CDN
+    CDN --> SSL
+    SSL --> LB
+    
+    %% Edge to Frontend
+    LB --> REACT
+    REACT --> ROUTER
+    REACT --> STATE
+    REACT --> UI
+    REACT --> WS_CLIENT
+    
+    %% Frontend to API Gateway
+    STATE --> GATEWAY
+    WS_CLIENT --> GATEWAY
+    
+    %% API Gateway Processing
+    GATEWAY --> AUTH_MW
+    AUTH_MW --> RATE_LIMIT
+    RATE_LIMIT --> VALIDATION
+    
+    %% Gateway to Services
+    VALIDATION --> API_SERVER
+    VALIDATION --> WS_SERVER
+    
+    %% Service Connections
+    API_SERVER --> AUTH_SVC
+    API_SERVER --> AI_SVC
+    API_SERVER --> TFA_SVC
+    API_SERVER --> EMAIL_SVC
+    API_SERVER --> FILE_SVC
+    
+    WS_SERVER --> CHAT_LOGIC
+    WS_SERVER --> NOTIFICATION_LOGIC
+    
+    %% Business Logic Connections
+    AUTH_SVC --> USER_LOGIC
+    AI_SVC --> CHAT_LOGIC
+    TFA_SVC --> USER_LOGIC
+    EMAIL_SVC --> NOTIFICATION_LOGIC
+    
+    API_SERVER --> LAWYER_LOGIC
+    API_SERVER --> SEARCH_LOGIC
+    
+    %% Data Access
+    USER_LOGIC --> STORAGE_INTERFACE
+    CHAT_LOGIC --> STORAGE_INTERFACE
+    LAWYER_LOGIC --> STORAGE_INTERFACE
+    NOTIFICATION_LOGIC --> STORAGE_INTERFACE
+    SEARCH_LOGIC --> STORAGE_INTERFACE
+    
+    STORAGE_INTERFACE --> ORM
+    ORM --> CONNECTION_POOL
+    CONNECTION_POOL --> PRIMARY_DB
+    CONNECTION_POOL --> REPLICA_DB
+    
+    %% External Service Connections
+    AI_SVC --> OPENAI
+    EMAIL_SVC --> FORMSUBMIT
+    TFA_SVC --> TOTP_SERVICE
+    
+    %% Monitoring Connections
+    API_SERVER --> METRICS
+    WS_SERVER --> METRICS
+    API_SERVER --> LOGS
+    WS_SERVER --> LOGS
+    PRIMARY_DB --> HEALTH
+    METRICS --> ALERTS
+    
+    %% Security Layer
+    CDN --> WAF
+    WAF --> DDoS
+    PRIMARY_DB --> ENCRYPTION
+    API_SERVER --> AUDIT
+    
+    %% Backup and Migration
+    PRIMARY_DB --> BACKUP_DB
+    ORM --> MIGRATION
+    MIGRATION --> PRIMARY_DB
+    
+    %% Styling
+    classDef clientStyle fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef edgeStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef frontendStyle fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef gatewayStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef serviceStyle fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef businessStyle fill:#f1f8e9,stroke:#33691e,stroke-width:2px
+    classDef dataStyle fill:#e0f2f1,stroke:#004d40,stroke-width:2px
+    classDef dbStyle fill:#e8eaf6,stroke:#1a237e,stroke-width:2px
+    classDef externalStyle fill:#fff8e1,stroke:#ff6f00,stroke-width:2px
+    classDef monitorStyle fill:#fafafa,stroke:#212121,stroke-width:2px
+    classDef securityStyle fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    
+    class WEB,MOBILE,PWA clientStyle
+    class CDN,LB,SSL edgeStyle
+    class REACT,ROUTER,STATE,UI,WS_CLIENT frontendStyle
+    class GATEWAY,AUTH_MW,RATE_LIMIT,VALIDATION gatewayStyle
+    class API_SERVER,WS_SERVER,AUTH_SVC,AI_SVC,TFA_SVC,EMAIL_SVC,FILE_SVC serviceStyle
+    class CHAT_LOGIC,LAWYER_LOGIC,USER_LOGIC,NOTIFICATION_LOGIC,SEARCH_LOGIC businessStyle
+    class STORAGE_INTERFACE,ORM,CONNECTION_POOL,MIGRATION dataStyle
+    class PRIMARY_DB,REPLICA_DB,BACKUP_DB dbStyle
+    class OPENAI,FORMSUBMIT,TOTP_SERVICE externalStyle
+    class METRICS,LOGS,HEALTH,ALERTS monitorStyle
+    class WAF,DDoS,ENCRYPTION,AUDIT securityStyle
+```
+
 **1. Presentation Layer (Client Tier)**
 
 The presentation layer consists of a modern React-based single-page application (SPA) that provides the user interface for all system interactions.

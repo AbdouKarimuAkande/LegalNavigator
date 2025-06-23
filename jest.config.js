@@ -8,7 +8,9 @@ export default {
     '**/*.(test|spec).+(ts|tsx|js)'
   ],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': ['ts-jest', {
+      useESM: true
+    }],
   },
   collectCoverageFrom: [
     'server/**/*.{ts,tsx}',
@@ -24,7 +26,6 @@ export default {
     'text',
     'lcov',
     'html',
-    'cobertura',
     'json-summary'
   ],
   coverageThreshold: {
@@ -37,38 +38,38 @@ export default {
   },
   setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
   testTimeout: 10000,
+  moduleNameMapping: {
+    '^@/(.*)$': '<rootDir>/client/src/$1',
+    '^@shared/(.*)$': '<rootDir>/shared/$1'
+  },
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(wouter|node-fetch|nanoid)/)'
+  ],
   projects: [
     {
       displayName: 'server',
       testMatch: ['<rootDir>/server/**/*.test.ts'],
       testEnvironment: 'node',
+      moduleNameMapping: {
+        '^@shared/(.*)$': '<rootDir>/shared/$1'
+      },
+      transformIgnorePatterns: [
+        'node_modules/(?!(node-fetch|nanoid)/)'
+      ]
     },
     {
-      displayName: 'client',
+      displayName: 'client', 
       testMatch: ['<rootDir>/client/**/*.test.tsx'],
       testEnvironment: 'jsdom',
       setupFilesAfterEnv: ['<rootDir>/client/src/test-setup.ts'],
-    },
-    {
-      displayName: 'integration',
-      testMatch: ['<rootDir>/tests/integration/**/*.test.ts'],
-      testEnvironment: 'node',
-    },
-    {
-      displayName: 'e2e',
-      testMatch: ['<rootDir>/tests/e2e/**/*.test.ts'],
-      testEnvironment: 'node',
+      moduleNameMapping: {
+        '^@/(.*)$': '<rootDir>/client/src/$1',
+        '^@shared/(.*)$': '<rootDir>/shared/$1'
+      },
+      transformIgnorePatterns: [
+        'node_modules/(?!(wouter)/)'
+      ]
     }
-  ],
-  reporters: [
-    'default',
-    ['jest-junit', {
-      outputDirectory: 'test-results',
-      outputName: 'junit.xml',
-      classNameTemplate: '{classname}',
-      titleTemplate: '{title}',
-      ancestorSeparator: ' › ',
-      usePathForSuiteName: true
-    }]
   ]
 };

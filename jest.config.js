@@ -1,24 +1,31 @@
-export default {
+
+module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/client/src/$1',
-    '^@shared/(.*)$': '<rootDir>/shared/$1'
-  },
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
-  globals: {
-    'ts-jest': {
-      useESM: true
-    }
+  testEnvironment: 'node',
+  roots: ['<rootDir>/server', '<rootDir>/client/src', '<rootDir>/tests'],
+  testMatch: [
+    '**/__tests__/**/*.+(ts|tsx|js)',
+    '**/*.(test|spec).+(ts|tsx|js)'
+  ],
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   collectCoverageFrom: [
     'server/**/*.{ts,tsx}',
     'client/src/**/*.{ts,tsx}',
-    '!**/*.d.ts',
+    '!server/**/*.d.ts',
+    '!client/src/**/*.d.ts',
+    '!server/index.ts',
     '!**/node_modules/**',
-    '!**/.next/**',
-    '!**/dist/**'
+    '!**/dist/**',
+  ],
+  coverageDirectory: 'coverage',
+  coverageReporters: [
+    'text',
+    'lcov',
+    'html',
+    'cobertura',
+    'json-summary'
   ],
   coverageThreshold: {
     global: {
@@ -28,13 +35,40 @@ export default {
       statements: 80
     }
   },
-  testMatch: [
-    '<rootDir>/**/__tests__/**/*.{ts,tsx}',
-    '<rootDir>/**/*.(test|spec).{ts,tsx}'
+  setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
+  testTimeout: 10000,
+  projects: [
+    {
+      displayName: 'server',
+      testMatch: ['<rootDir>/server/**/*.test.ts'],
+      testEnvironment: 'node',
+    },
+    {
+      displayName: 'client',
+      testMatch: ['<rootDir>/client/**/*.test.tsx'],
+      testEnvironment: 'jsdom',
+      setupFilesAfterEnv: ['<rootDir>/client/src/test-setup.ts'],
+    },
+    {
+      displayName: 'integration',
+      testMatch: ['<rootDir>/tests/integration/**/*.test.ts'],
+      testEnvironment: 'node',
+    },
+    {
+      displayName: 'e2e',
+      testMatch: ['<rootDir>/tests/e2e/**/*.test.ts'],
+      testEnvironment: 'node',
+    }
   ],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest'
-  },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/']
+  reporters: [
+    'default',
+    ['jest-junit', {
+      outputDirectory: 'test-results',
+      outputName: 'junit.xml',
+      classNameTemplate: '{classname}',
+      titleTemplate: '{title}',
+      ancestorSeparator: ' › ',
+      usePathForSuiteName: true
+    }]
+  ]
 };

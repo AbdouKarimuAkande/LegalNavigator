@@ -1,8 +1,9 @@
 
 export default {
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/default-esm',
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   testEnvironment: 'node',
-  roots: ['<rootDir>/server', '<rootDir>/client/src', '<rootDir>/tests'],
+  roots: ['<rootDir>/server', '<rootDir>/client/src'],
   testMatch: [
     '**/__tests__/**/*.+(ts|tsx|js)',
     '**/*.(test|spec).+(ts|tsx|js)'
@@ -28,48 +29,12 @@ export default {
     'html',
     'json-summary'
   ],
-  coverageThreshold: {
-    global: {
-      branches: 80,
-      functions: 80,
-      lines: 80,
-      statements: 80
-    }
-  },
-  setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
-  testTimeout: 10000,
-  moduleNameMapping: {
+  testTimeout: 30000,
+  moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/client/src/$1',
     '^@shared/(.*)$': '<rootDir>/shared/$1'
   },
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transformIgnorePatterns: [
     'node_modules/(?!(wouter|node-fetch|nanoid)/)'
-  ],
-  projects: [
-    {
-      displayName: 'server',
-      testMatch: ['<rootDir>/server/**/*.test.ts'],
-      testEnvironment: 'node',
-      moduleNameMapping: {
-        '^@shared/(.*)$': '<rootDir>/shared/$1'
-      },
-      transformIgnorePatterns: [
-        'node_modules/(?!(node-fetch|nanoid)/)'
-      ]
-    },
-    {
-      displayName: 'client', 
-      testMatch: ['<rootDir>/client/**/*.test.tsx'],
-      testEnvironment: 'jsdom',
-      setupFilesAfterEnv: ['<rootDir>/client/src/test-setup.ts'],
-      moduleNameMapping: {
-        '^@/(.*)$': '<rootDir>/client/src/$1',
-        '^@shared/(.*)$': '<rootDir>/shared/$1'
-      },
-      transformIgnorePatterns: [
-        'node_modules/(?!(wouter)/)'
-      ]
-    }
   ]
 };

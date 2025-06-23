@@ -1,21 +1,17 @@
 
 export default {
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/default-esm',
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   testEnvironment: 'node',
   roots: ['<rootDir>/server', '<rootDir>/client/src'],
   testMatch: [
-    '**/__tests__/**/*.test.+(ts|tsx|js)',
+    '**/__tests__/**/*.+(ts|tsx|js)',
     '**/*.(test|spec).+(ts|tsx|js)'
   ],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/dist/',
-    'test-utils.ts',
-    'setup.ts',
-    '.*\\.disabled$'
-  ],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': ['ts-jest', {
+      useESM: true
+    }],
   },
   collectCoverageFrom: [
     'server/**/*.{ts,tsx}',
@@ -25,15 +21,20 @@ export default {
     '!server/index.ts',
     '!**/node_modules/**',
     '!**/dist/**',
-    '!**/*test-utils*',
-    '!**/*setup*'
   ],
   coverageDirectory: 'coverage',
-  testTimeout: 10000,
-  maxWorkers: 1,
-  forceExit: true,
+  coverageReporters: [
+    'text',
+    'lcov',
+    'html',
+    'json-summary'
+  ],
+  testTimeout: 30000,
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/client/src/$1',
     '^@shared/(.*)$': '<rootDir>/shared/$1'
-  }
+  },
+  transformIgnorePatterns: [
+    'node_modules/(?!(wouter|node-fetch|nanoid)/)'
+  ]
 };

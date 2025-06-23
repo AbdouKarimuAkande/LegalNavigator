@@ -1,0 +1,822 @@
+PS C:\Users\USER\Desktop\LegalNavigator> npm test
+
+> rest-express@1.0.0 test
+> jest
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+ FAIL  server/__tests__/test-utils.ts
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/index.js:1052:18)
+      at node_modules/@jest/core/build/index.js:1122:165
+      at node_modules/emittery/index.js:363:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:361:23)
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+ PASS  server/__tests__/ai-service.test.ts (42.342 s)
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+  ● Console
+
+    console.log
+      AI Legal Service initialized - waiting for custom model
+
+      at new AILegalService (server/ai-service.ts:50:13)     
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+    console.error
+      Error processing legal query: Error: Model API Error
+          at C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:82:49
+          at Generator.next (<anonymous>)
+          at C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:8:71
+          at new Promise (<anonymous>)
+          at __awaiter (C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:4:12) 
+          at Object.<anonymous> (C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:81:60)
+          at Promise.finally.completed (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1559:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1499:10)
+          at _callCircusTest (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1009:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:949:3)
+          at _runTestsForDescribeBlock (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:839:13)
+          at _runTestsForDescribeBlock (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:829:11)
+          at _runTestsForDescribeBlock (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:829:11)
+          at run (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:757:3)
+          at runAndTransformResultsToJestFormat (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1920:21)
+          at jestAdapter (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\runner.js:101:19)
+          at runTestInternal (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-runner\build\testWorker.js:272:16)
+          at runTest (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-runner\build\testWorker.js:340:7)
+          at Object.worker (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-runner\build\testWorker.js:494:12)
+
+       98 |       };
+       99 |     } catch (error) {
+    > 100 |       console.error('Error processing legal query:', error);
+          |               ^
+      101 |       throw new Error('Failed to process legal query with custom model');
+      102 |     }
+      103 |   }
+
+      at AILegalService.<anonymous> (server/ai-service.ts:100:15)
+          at Generator.throw (<anonymous>)
+      at rejected (server/ai-service.ts:6:65)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+    console.log
+      AI Legal Service initialized - waiting for custom model
+
+      at new AILegalService (server/ai-service.ts:50:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.setModel (server/ai-service.ts:59:13)
+
+
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  server/__tests__/2fa-service.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  server/__tests__/2fa-service.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  server/__tests__/2fa-service.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  server/__tests__/2fa-service.test.ts
+ FAIL  server/__tests__/storage.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  server/__tests__/2fa-service.test.ts
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\nanoid\index.js:1
+    import { webcrypto as crypto } from 'node:crypto'
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      15 |   type InsertNotification,
+      16 | } from "@shared/schema";
+    > 17 | import { nanoid } from "nanoid";
+         | ^
+      18 |
+      19 | export interface IStorage {
+      20 |   // User operations
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.<anonymous> (server/storage.ts:17:1)
+      at Object.<anonymous> (server/__tests__/storage.test.ts:1:1)
+
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  server/__tests__/2fa-service.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+ FAIL  server/__tests__/2fa-service.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ RUNS  client/src/__tests__/auth.test.tsx
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\node-fetch\src\index.js:9
+    import http from 'node:http';
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      1 | import speakeasy from 'speakeasy';
+      2 | import QRCode from 'qrcode';
+    > 3 | import fetch from 'node-fetch';
+        | ^
+      4 |
+      5 | export interface TwoFactorSetup {
+      6 |   secret: string;
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.<anonymous> (server/2fa-service.ts:3:1)
+      at Object.<anonymous> (server/__tests__/2fa-service.test.ts:1:1)
+
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+ RUNS  client/src/__tests__/auth.test.tsx
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ FAIL  server/__tests__/routes.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+  ● Test suite failed to run
+
+    server/__tests__/routes.test.ts:310:11 - error TS2353: Object literal may only specify known properties, and 'practiceAreas' does not exist in type '{ location: string; userId: string; licenseNumber: string; specialization: Json; experienceYears: number; languages: Json; hourlyRate?: string | null | undefined; bio?: string | null | undefined; ... 5 more ...; totalRatings?: number | ... 1 more ... | undefined; }'.
+
+    310           practiceAreas: ['Criminal Defense', 'Civil Rights'],
+                  ~~~~~~~~~~~~~
+
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ FAIL  client/src/__tests__/auth.test.tsx (58.244 s)
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+  ● Authentication Hook › should initialize with loading state
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+  ● Authentication Hook › should handle successful login
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+  ● Authentication Hook › should handle login with 2FA requirement
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+  ● Authentication Hook › should handle logout
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+  ● Authentication Hook › should handle failed token validation on init
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+
+
+ FAIL  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\wouter\esm\index.js:1
+    import { parse } from 'regexparam';
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+    > 1 | import { Switch, Route } from "wouter";
+        | ^
+      2 | import { queryClient } from "./lib/queryClient";
+      3 | import { QueryClientProvider } from "@tanstack/react-query";
+      4 | import { Toaster } from "@/components/ui/toaster";
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.<anonymous> (client/src/App.tsx:1:1)
+      at Object.<anonymous> (client/src/__tests__/e2e/user-flow.e2e.test.tsx:3:1)
+
+
+ FAIL  server/__tests__/integration/auth.integration.test.ts  
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\nanoid\index.js:1
+    import { webcrypto as crypto } from 'node:crypto'
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      15 |   type InsertNotification,
+      16 | } from "@shared/schema";
+    > 17 | import { nanoid } from "nanoid";
+         | ^
+      18 |
+      19 | export interface IStorage {
+      20 |   // User operations
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.<anonymous> (server/storage.ts:17:1)
+      at Object.<anonymous> (server/routes.ts:4:1)
+      at Object.<anonymous> (server/index.ts:2:1)
+      at Object.<anonymous> (server/__tests__/integration/auth.integration.test.ts:3:1)
+
+ FAIL  server/__tests__/integration/routes.integration.test.ts
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\nanoid\index.js:1
+    import { webcrypto as crypto } from 'node:crypto'
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      15 |   type InsertNotification,
+      16 | } from "@shared/schema";
+    > 17 | import { nanoid } from "nanoid";
+         | ^
+      18 |
+      19 | export interface IStorage {
+      20 |   // User operations
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.<anonymous> (server/storage.ts:17:1)
+      at Object.<anonymous> (server/routes.ts:4:1)
+      at Object.<anonymous> (server/__tests__/integration/routes.integration.test.ts:3:1)
+
+Test Suites: 8 failed, 1 passed, 9 total
+Tests:       5 failed, 6 passed, 11 total
+Snapshots:   0 total
+Time:        62.754 s
+Ran all test suites.
+PS C:\Users\USER\Desktop\LegalNavigator> 

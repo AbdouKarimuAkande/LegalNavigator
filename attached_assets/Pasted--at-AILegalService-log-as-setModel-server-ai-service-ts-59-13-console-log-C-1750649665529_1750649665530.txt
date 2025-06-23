@@ -1,0 +1,862 @@
+
+      at AILegalService.log [as setModel] (server/ai-service.ts:59:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.log [as setModel] (server/ai-service.ts:59:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.log [as setModel] (server/ai-service.ts:59:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.log [as setModel] (server/ai-service.ts:59:13)
+
+    console.error
+      Error processing legal query: Error: Model API Error
+          at C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:82:49
+          at Generator.next (<anonymous>)
+          at C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:8:71
+          at new Promise (<anonymous>)
+          at __awaiter (C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:4:12) 
+          at Object.<anonymous> (C:\Users\USER\Desktop\LegalNavigator\server\__tests__\ai-service.test.ts:81:60)
+          at Promise.finally.completed (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1559:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1499:10)
+          at _callCircusTest (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1009:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:949:3)
+          at _runTestsForDescribeBlock (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:839:13)
+          at _runTestsForDescribeBlock (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:829:11)
+          at _runTestsForDescribeBlock (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:829:11)
+          at run (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:757:3)
+          at runAndTransformResultsToJestFormat (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\jestAdapterInit.js:1920:21)
+          at jestAdapter (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-circus\build\runner.js:101:19)
+          at runTestInternal (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-runner\build\testWorker.js:272:16)
+          at runTest (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-runner\build\testWorker.js:340:7)
+          at Object.worker (C:\Users\USER\Desktop\LegalNavigator\node_modules\jest-runner\build\testWorker.js:494:12)
+
+       98 |       };
+       99 |     } catch (error) {
+    > 100 |       console.error('Error processing legal query:', error);
+          |               ^
+      101 |       throw new Error('Failed to process legal query with custom model');
+      102 |     }
+      103 |   }
+
+      at AILegalService.error (server/ai-service.ts:100:15)
+          at Generator.throw (<anonymous>)
+      at rejected (server/ai-service.ts:1708:32)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.log [as setModel] (server/ai-service.ts:59:13)
+
+    console.log
+      AI Legal Service initialized - waiting for custom model
+
+      at new log (server/ai-service.ts:50:13)
+
+    console.log
+      Custom AI model has been set
+
+      at AILegalService.log [as setModel] (server/ai-service.ts:59:13)
+
+
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  server/__tests__/ai-service.test.ts
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+ FAIL  client/src/__tests__/auth.test.tsx (47.893 s)
+
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+  ● Authentication Hook › should initialize with loading state
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+  ● Authentication Hook › should handle successful login
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+  ● Authentication Hook › should handle login with 2FA requirement
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+  ● Authentication Hook › should handle logout
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+  ● Authentication Hook › should handle failed token validation on init
+
+    ReferenceError: localStorage is not defined
+
+      50 | describe('Authentication Hook', () => {
+      51 |   beforeEach(() => {
+    > 52 |     localStorage.clear();
+         |     ^
+      53 |     jest.clearAllMocks();
+      54 |   });
+      55 |
+
+      at Object.<anonymous> (client/src/__tests__/auth.test.tsx:52:5)
+
+
+ RUNS  client/src/__tests__/auth.test.tsx
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+ FAIL  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\wouter\esm\index.js:1
+    import { parse } from 'regexparam';
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+    > 1 | import { Switch, Route } from "wouter";
+        | ^
+      2 | import { queryClient } from "./lib/queryClient";
+      3 | import { QueryClientProvider } from "@tanstack/react-query";
+      4 | import { Toaster } from "@/components/ui/toaster";
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.require (client/src/App.tsx:1:1)
+      at Object.<anonymous> (client/src/__tests__/e2e/user-flow.e2e.test.tsx:3:1)
+
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+ FAIL  server/__tests__/2fa-service.test.ts
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx        
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts  
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\node-fetch\src\index.js:9
+    import http from 'node:http';
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      1 | import speakeasy from 'speakeasy';
+      2 | import QRCode from 'qrcode';
+    > 3 | import fetch from 'node-fetch';
+        | ^
+      4 |
+      5 | export interface TwoFactorSetup {
+      6 |   secret: string;
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.require (server/2fa-service.ts:3:1)
+      at Object.<anonymous> (server/__tests__/2fa-service.test.ts:1:1)
+
+
+ RUNS  client/src/__tests__/e2e/user-flow.e2e.test.tsx
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ RUNS  server/__tests__/integration/auth.integration.test.ts
+
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+ FAIL  server/__tests__/routes.test.ts
+
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+  ● Test suite failed to run
+
+    server/__tests__/routes.test.ts:310:11 - error TS2353: Object literal may only specify known properties, and 'practiceAreas' does not exist in type '{ location: string; userId: string; licenseNumber: string; specialization: Json; experienceYears: number; languages: Json; hourlyRate?: string | null | undefined; bio?: string | null | undefined; ... 5 more ...; totalRatings?: number | ... 1 more ... | undefined; }'.
+
+    310           practiceAreas: ['Criminal Defense', 'Civil Rights'],
+                  ~~~~~~~~~~~~~
+
+
+ RUNS  server/__tests__/integration/routes.integration.test.ts
+
+ FAIL  server/__tests__/storage.test.ts
+
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\nanoid\index.js:1
+    import { webcrypto as crypto } from 'node:crypto'
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      15 |   type InsertNotification,
+      16 | } from "@shared/schema";
+    > 17 | import { nanoid } from "nanoid";
+         | ^
+      18 |
+      19 | export interface IStorage {
+      20 |   // User operations
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.require (server/storage.ts:17:1)
+      at Object.<anonymous> (server/__tests__/storage.test.ts:1:1)
+
+
+ FAIL  server/__tests__/integration/auth.integration.test.ts  
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\nanoid\index.js:1
+    import { webcrypto as crypto } from 'node:crypto'
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      15 |   type InsertNotification,
+      16 | } from "@shared/schema";
+    > 17 | import { nanoid } from "nanoid";
+         | ^
+      18 |
+      19 | export interface IStorage {
+      20 |   // User operations
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.require (server/storage.ts:17:1)
+      at Object.require (server/routes.ts:4:1)
+      at Object.<anonymous> (server/index.ts:2:1)
+      at Object.<anonymous> (server/__tests__/integration/auth.integration.test.ts:3:1)
+
+ FAIL  server/__tests__/integration/routes.integration.test.ts
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard 
+JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based 
+on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation, specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    C:\Users\USER\Desktop\LegalNavigator\node_modules\nanoid\index.js:1
+    import { webcrypto as crypto } from 'node:crypto'
+    ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+      15 |   type InsertNotification,
+      16 | } from "@shared/schema";
+    > 17 | import { nanoid } from "nanoid";
+         | ^
+      18 |
+      19 | export interface IStorage {
+      20 |   // User operations
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1320:40)
+      at Object.require (server/storage.ts:17:1)
+      at Object.require (server/routes.ts:4:1)
+      at Object.<anonymous> (server/__tests__/integration/routes.integration.test.ts:3:1)
+
+Running coverage on untested files...Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\server\metrics.ts
+ERROR: server/metrics.ts:4:24 - error TS2307: Cannot find module 'prom-client' or its corresponding type declarations.
+
+4 import promClient from 'prom-client';
+                         ~~~~~~~~~~~~~
+server/metrics.ts:112:14 - error TS18046: 'error' is of type 'unknown'.
+
+112       error: error.message
+                 ~~~~~
+server/metrics.ts:188:55 - error TS18046: 'session' is of type 'unknown'.
+
+188     const activeSessions = sessions.filter(session => session.status === 'active');
+                                                          ~~~~~~~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\server\db-fallback.ts
+ERROR: server/db-fallback.ts:12:24 - error TS2769: No overload matches this call.
+  Overload 1 of 2, '(connectionUri: string): Pool', gave the following error.
+    Argument of type '{ host: string; user: string; password: string; database: string; port: number; waitForConnections: boolean; connectionLimit: number; queueLimit: number; acquireTimeout: number; timeout: number; }' is not assignable to parameter of type 'string'.
+  Overload 2 of 2, '(config: PoolOptions): Pool', gave the following error.
+    Object literal may only specify known properties, and 'acquireTimeout' does not exist in type 'PoolOptions'.
+
+12     const pool = mysql.createPool({
+                          ~~~~~~~~~~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\server\seed-database.ts
+ERROR: server/seed-database.ts:15:34 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: 
+NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+15     const [adminUser] = await db.insert(users).values({
+                                    ~~~~~~
+server/seed-database.ts:28:36 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+28     const [regularUser] = await db.insert(users).values({
+                                      ~~~~~~
+server/seed-database.ts:41:35 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+41     const [lawyerUser] = await db.insert(users).values({
+                                     ~~~~~~
+server/seed-database.ts:54:14 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+54     await db.insert(lawyers).values({
+                ~~~~~~
+server/seed-database.ts:72:36 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+72     const [lawyer2User] = await db.insert(users).values({
+                                      ~~~~~~
+server/seed-database.ts:82:14 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+82     await db.insert(lawyers).values({
+                ~~~~~~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\server\storage-fallback.ts
+ERROR: server/storage-fallback.ts:22:83 - error TS18046: 'error' is of type 'unknown'.
+
+22       console.warn('MySQL connection failed, falling back to in-memory storage:', error.message);   
+                                                                                     ~~~~~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\server\storage-mysql.ts
+ERROR: server/storage-mysql.ts:150:25 - error TS2339: Property 'password' does not exist on type 'MySqlTableWithColumns<{ name: "users"; schema: undefined; columns: { id: MySqlColumn<{ name: "id"; tableName: "users"; dataType: "string"; columnType: "MySqlVarChar"; data: string; driverParam: string | number; 
+notNull: true; ... 7 more ...; generated: undefined; }, {}, {}>; ... 17 more ...; updatedAt: MySqlColumn<....'.
+
+150         password: users.password,
+                            ~~~~~~~~
+server/storage-mysql.ts:195:25 - error TS2339: Property 'password' does not exist on type 'MySqlTableWithColumns<{ name: "users"; schema: undefined; columns: { id: MySqlColumn<{ name: "id"; tableName: "users"; dataType: "string"; columnType: "MySqlVarChar"; data: string; driverParam: string | number; notNull: true; ... 7 more ...; generated: undefined; }, {}, {}>; ... 17 more ...; updatedAt: MySqlColumn<....'.
+
+195         password: users.password,
+                            ~~~~~~~~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\server\storage-pg.ts
+ERROR: server/storage-pg.ts:61:29 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+61     const [user] = await db.select().from(users).where(eq(users.id, id));
+                               ~~~~~~
+server/storage-pg.ts:66:29 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+66     const [user] = await db.select().from(users).where(eq(users.email, email));
+                               ~~~~~~
+server/storage-pg.ts:72:8 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+72       .insert(users)
+          ~~~~~~
+server/storage-pg.ts:83:8 - error TS2339: Property 'update' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+83       .update(users)
+          ~~~~~~
+server/storage-pg.ts:96:8 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+96       .insert(chatSessions)
+          ~~~~~~
+server/storage-pg.ts:107:8 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+107       .select()
+           ~~~~~~
+server/storage-pg.ts:115:8 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+115       .select()
+           ~~~~~~
+server/storage-pg.ts:123:8 - error TS2339: Property 'update' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+123       .update(chatSessions)
+           ~~~~~~
+server/storage-pg.ts:136:8 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+136       .insert(chatMessages)
+           ~~~~~~
+server/storage-pg.ts:144:8 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+144       .select()
+           ~~~~~~
+server/storage-pg.ts:153:8 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+153       .insert(lawyers)
+           ~~~~~~
+server/storage-pg.ts:169:8 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+169       .select({
+           ~~~~~~
+server/storage-pg.ts:232:8 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+232       .select({
+           ~~~~~~
+server/storage-pg.ts:275:8 - error TS2339: Property 'update' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+275       .update(lawyers)
+           ~~~~~~
+server/storage-pg.ts:288:8 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+288       .insert(lawyerRatings)
+           ~~~~~~
+server/storage-pg.ts:296:8 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+296       .select()
+           ~~~~~~
+server/storage-pg.ts:305:8 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+305       .insert(verificationCodes)
+           ~~~~~~
+server/storage-pg.ts:313:8 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+313       .select()
+           ~~~~~~
+server/storage-pg.ts:329:8 - error TS2339: Property 'update' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+329       .update(verificationCodes)
+           ~~~~~~
+server/storage-pg.ts:337:8 - error TS2339: Property 'insert' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+337       .insert(notifications)
+           ~~~~~~
+server/storage-pg.ts:345:8 - error TS2339: Property 'select' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+345       .select()
+           ~~~~~~
+server/storage-pg.ts:353:8 - error TS2339: Property 'update' does not exist on type 'Promise<(NeonHttpDatabase<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")> & { $client: NeonQueryFunction<false, false>; }) | (MySql2Database<...> & { ...; }) | { ...; }>'.
+
+353       .update(notifications)
+           ~~~~~~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\server\vite.ts
+ERROR: server/vite.ts:39:5 - error TS2322: Type '{ middlewareMode: boolean; hmr: { server: Server<typeof IncomingMessage, typeof ServerResponse>; }; allowedHosts: boolean; }' is not assignable to type 'ServerOptions'.
+  Types of property 'allowedHosts' are incompatible.
+    Type 'boolean' is not assignable to type 'true | string[] | undefined'.
+
+39     server: serverOptions,
+       ~~~~~~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\server\db-pg.ts
+ERROR: server/db-pg.ts:9:39 - error TS2345: Argument of type '[NeonQueryFunction<false, false>, { schema: typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg"); mode: string; }]' is not assignable to parameter of type '[string | NeonQueryFunction<false, false>] | [string | NeonQueryFunction<false, false>, DrizzleConfig<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")>] | [...]'.
+  Type '[NeonQueryFunction<false, false>, { schema: typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg"); mode: string; }]' is not assignable to type '[string | NeonQueryFunction<false, false>, DrizzleConfig<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")>]'.
+    Type at position 1 in source is not compatible with type at position 1 in target.
+      Object literal may only specify known properties, and 'mode' does not exist in type 'DrizzleConfig<typeof import("C:/Users/USER/Desktop/LegalNavigator/shared/schema-pg")>'.
+
+9     const db = drizzle(sql, { schema, mode: 'default' });
+                                        ~~~~
+server/db-pg.ts:19:19 - error TS1378: Top-level 'await' expressions are only allowed when the 'module' 
+option is set to 'es2022', 'esnext', 'system', 'node16', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+
+19 export const db = await createDatabaseConnection();
+                     ~~~~~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\client\src\test-setup.ts
+ERROR: client/src/test-setup.ts:52:1 - error TS2739: Type 'Mock<any, any, any>' is missing the following properties from type '{ new (url: string | URL, protocols?: string | string[] | undefined): WebSocket; prototype: WebSocket; readonly CONNECTING: 0; readonly OPEN: 1; readonly CLOSING: 2; readonly CLOSED: 3; }': CONNECTING, OPEN, CLOSING, CLOSED
+
+52 global.WebSocket = jest.fn().mockImplementation(() => ({
+   ~~~~~~~~~~~~~~~~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\client\src\hooks\use-auth-backup.ts
+ERROR: client/src/hooks/use-auth-backup.ts:131:6 - error TS2503: Cannot find namespace 'AuthContext'.  
+
+131     <AuthContext.Provider
+         ~~~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:132:7 - error TS2304: Cannot find name 'value'.
+
+132       value={{
+          ~~~~~
+client/src/hooks/use-auth-backup.ts:133:12 - error TS2695: Left side of comma operator is unused and has no side effects.
+
+133         ...authState,
+               ~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:133:12 - error TS2695: Left side of comma operator is unused and has no side effects.
+
+133         ...authState,
+               ~~~~~~~~~~
+134         login,
+    ~~~~~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:133:12 - error TS2695: Left side of comma operator is unused and has no side effects.
+
+133         ...authState,
+               ~~~~~~~~~~
+134         login,
+    ~~~~~~~~~~~~~~
+135         register,
+    ~~~~~~~~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:133:12 - error TS2695: Left side of comma operator is unused and has no side effects.
+
+133         ...authState,
+               ~~~~~~~~~~
+134         login,
+    ~~~~~~~~~~~~~~
+135         register,
+    ~~~~~~~~~~~~~~~~~
+136         verifyEmail,
+    ~~~~~~~~~~~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:133:12 - error TS2695: Left side of comma operator is unused and has no side effects.
+
+133         ...authState,
+               ~~~~~~~~~~
+134         login,
+    ~~~~~~~~~~~~~~
+...
+136         verifyEmail,
+    ~~~~~~~~~~~~~~~~~~~~
+137         verify2FA,
+    ~~~~~~~~~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:133:12 - error TS2695: Left side of comma operator is unused and has no side effects.
+
+133         ...authState,
+               ~~~~~~~~~~
+134         login,
+    ~~~~~~~~~~~~~~
+...
+137         verify2FA,
+    ~~~~~~~~~~~~~~~~~~
+138         logout,
+    ~~~~~~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:133:12 - error TS2695: Left side of comma operator is unused and has no side effects.
+
+133         ...authState,
+               ~~~~~~~~~~
+134         login,
+    ~~~~~~~~~~~~~~
+...
+138         logout,
+    ~~~~~~~~~~~~~~~
+139         updateProfile,
+    ~~~~~~~~~~~~~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:141:5 - error TS2365: Operator '<' cannot be applied to types 'boolean' and 'RegExp'.
+
+141     >
+        ~
+142       {children}
+    ~~~~~~~~~~~~~~~~
+143     </AuthContext.Provider>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:142:8 - error TS18004: No value exists in scope for the shorthand property 'children'. Either declare one or provide an initializer.
+
+142       {children}
+           ~~~~~~~~
+client/src/hooks/use-auth-backup.ts:132:7 - error TS1005: '>' expected.
+
+132       value={{
+          ~~~~~
+client/src/hooks/use-auth-backup.ts:132:12 - error TS1005: ')' expected.
+
+132       value={{
+               ~
+client/src/hooks/use-auth-backup.ts:132:14 - error TS1136: Property assignment expected.
+
+132       value={{
+                 ~
+client/src/hooks/use-auth-backup.ts:133:9 - error TS1128: Declaration or statement expected.
+
+133         ...authState,
+            ~~~
+client/src/hooks/use-auth-backup.ts:140:7 - error TS1109: Expression expected.
+
+140       }}
+          ~
+client/src/hooks/use-auth-backup.ts:141:5 - error TS1109: Expression expected.
+
+141     >
+        ~
+client/src/hooks/use-auth-backup.ts:143:6 - error TS1161: Unterminated regular expression literal.     
+
+143     </AuthContext.Provider>
+         ~~~~~~~~~~~~~~~~~~~~~~
+client/src/hooks/use-auth-backup.ts:144:3 - error TS1128: Declaration or statement expected.
+
+144   );
+      ~
+client/src/hooks/use-auth-backup.ts:145:1 - error TS1128: Declaration or statement expected.
+
+145 }
+    ~
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\client\src\components\chat\chat-interface.tsx
+ERROR: client/src/components/chat/chat-interface.tsx:112:9 - error TS2322: Type '"send_message"' is not assignable to type '"error" | "auth" | "chat_message" | "message_sent" | "ai_response" | "auth_success" | "auth_error"'.
+
+112         type: 'send_message',
+            ~~~~
+
+  client/src/types/index.ts:72:3
+    72   type: 'auth' | 'chat_message' | 'message_sent' | 'ai_response' | 'error' | 'auth_success' | 'auth_error';
+         ~~~~
+    The expected type comes from property 'type' which is declared here on type 'WSMessage'
+STACK: 
+Failed to collect coverage from C:\Users\USER\Desktop\LegalNavigator\client\src\hooks\use-auth.tsx
+ERROR: Unable to process 'C:\Users\USER\Desktop\LegalNavigator\client\src\hooks\use-auth.tsx', please make sure that `outDir` in your tsconfig is neither `''` or `'.'`. You can also configure Jest config option `transformIgnorePatterns` to inform `ts-jest` to transform C:\Users\USER\Desktop\LegalNavigator\client\src\hooks\use-auth.tsx
+STACK: Error: Unable to process 'C:\Users\USER\Desktop\LegalNavigator\client\src\hooks\use-auth.tsx', please make sure that `outDir` in your tsconfig is neither `''` or `'.'`. You can also configure Jest config option `transformIgnorePatterns` to inform `ts-jest` to transform C:\Users\USER\Desktop\LegalNavigator\client\src\hooks\use-auth.tsx
+    at TsCompiler.getCompiledOutput (C:\Users\USER\Desktop\LegalNavigator\node_modules\ts-jest\dist\legacy\compiler\ts-compiler.js:184:27)
+    at TsJestCompiler.getCompiledOutput (C:\Users\USER\Desktop\LegalNavigator\node_modules\ts-jest\dist\legacy\compiler\ts-jest-compiler.js:15:39)
+    at TsJestTransformer.processWithTs (C:\Users\USER\Desktop\LegalNavigator\node_modules\ts-jest\dist\legacy\ts-jest-transformer.js:204:41)
+    at TsJestTransformer.processAsync (C:\Users\USER\Desktop\LegalNavigator\node_modules\ts-jest\dist\legacy\ts-jest-transformer.js:149:42)
+    at ScriptTransformer.transformSourceAsync (C:\Users\USER\Desktop\LegalNavigator\node_modules\@jest\transform\build\index.js:462:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async generateEmptyCoverage (C:\Users\USER\Desktop\LegalNavigator\node_modules\@jest\reporters\build\CoverageWorker.js:92:9)
+-------------------------------|---------|----------|---------|---------|-------------------
+File                           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------------------|---------|----------|---------|---------|-------------------
+All files                      |    1.26 |     1.14 |    0.86 |    1.47 | 
+ client/src                    |       0 |        0 |       0 |       0 | 
+  App.tsx                      |       0 |        0 |       0 |       0 | 24-110
+  main.tsx                     |       0 |      100 |     100 |       0 | 5
+ client/src/components/auth    |       0 |        0 |       0 |       0 | 
+  auth-modal.tsx               |       0 |        0 |       0 |       0 | 18-397
+  two-factor-setup.tsx         |       0 |        0 |       0 |       0 | 26-305
+ client/src/components/chat    |       0 |        0 |       0 |       0 | 
+  chat-sidebar.tsx             |       0 |        0 |       0 |       0 | 27-129
+  message.tsx                  |       0 |        0 |       0 |       0 | 14-104
+ client/src/components/lawyers |       0 |        0 |       0 |       0 | 
+  lawyer-card.tsx              |       0 |        0 |       0 |       0 | 15-107
+ client/src/components/layout  |       0 |        0 |       0 |       0 | 
+  header.tsx                   |       0 |        0 |       0 |       0 | 21-77             
+  main-layout.tsx              |       0 |      100 |       0 |       0 | 12-20
+  sidebar.tsx                  |       0 |        0 |       0 |       0 | 26-97
+ client/src/components/theme   |       0 |        0 |       0 |       0 | 
+  theme-provider.tsx           |       0 |        0 |       0 |       0 | 11-42
+ client/src/components/ui      |       0 |        0 |       0 |       0 | 
+  accordion.tsx                |       0 |      100 |       0 |       0 | 7-54
+  alert-dialog.tsx             |       0 |      100 |       0 |       0 | 7-125
+  alert.tsx                    |       0 |      100 |       0 |       0 | 6-57
+  aspect-ratio.tsx             |       0 |      100 |     100 |       0 | 3
+  avatar.tsx                   |       0 |      100 |       0 |       0 | 8-48
+  badge.tsx                    |       0 |      100 |       0 |       0 | 6-31
+  breadcrumb.tsx               |       0 |        0 |       0 |       0 | 7-105
+  button.tsx                   |       0 |        0 |       0 |       0 | 7-54
+  calendar.tsx                 |       0 |        0 |       0 |       0 | 13-66
+  card.tsx                     |       0 |      100 |       0 |       0 | 5-77
+  carousel.tsx                 |       0 |        0 |       0 |       0 | 31-251
+  chart.tsx                    |       0 |        0 |       0 |       0 | 9-353
+  checkbox.tsx                 |       0 |      100 |       0 |       0 | 7-26
+  collapsible.tsx              |       0 |      100 |     100 |       0 | 5-9
+  command.tsx                  |       0 |      100 |       0 |       0 | 9-139
+  context-menu.tsx             |       0 |        0 |       0 |       0 | 7-180
+  dialog.tsx                   |       0 |      100 |       0 |       0 | 9-109
+  drawer.tsx                   |       0 |        0 |       0 |       0 | 8-105
+  dropdown-menu.tsx            |       0 |        0 |       0 |       0 | 7-180
+  form.tsx                     |       0 |        0 |       0 |       0 | 18-167
+  hover-card.tsx               |       0 |        0 |       0 |       0 | 8-27
+  input-otp.tsx                |       0 |        0 |       0 |       0 | 7-67
+  input.tsx                    |       0 |      100 |       0 |       0 | 5-20
+  label.tsx                    |       0 |      100 |       0 |       0 | 7-22
+  menubar.tsx                  |       0 |        0 |       0 |       0 | 10-237
+  navigation-menu.tsx          |       0 |      100 |       0 |       0 | 8-115
+  pagination.tsx               |       0 |        0 |       0 |       0 | 7-107
+  popover.tsx                  |       0 |        0 |       0 |       0 | 6-27
+  progress.tsx                 |       0 |        0 |       0 |       0 | 8-26
+  radio-group.tsx              |       0 |      100 |       0 |       0 | 7-40
+  resizable.tsx                |       0 |        0 |       0 |       0 | 8-29
+  scroll-area.tsx              |       0 |        0 |       0 |       0 | 6-44
+  select.tsx                   |       0 |        0 |       0 |       0 | 9-147             
+  separator.tsx                |       0 |        0 |       0 |       0 | 6-27
+  sheet.tsx                    |       0 |        0 |       0 |       0 | 10-127
+  sidebar.tsx                  |       0 |        0 |       0 |       0 | 26-744
+  skeleton.tsx                 |       0 |      100 |       0 |       0 | 4-7
+  slider.tsx                   |       0 |      100 |       0 |       0 | 6-24
+  switch.tsx                   |       0 |      100 |       0 |       0 | 6-25
+  table.tsx                    |       0 |      100 |       0 |       0 | 5-106
+  tabs.tsx                     |       0 |      100 |       0 |       0 | 6-51
+  textarea.tsx                 |       0 |      100 |       0 |       0 | 5-20
+  toast.tsx                    |       0 |      100 |       0 |       0 | 8-111
+  toaster.tsx                  |       0 |        0 |       0 |       0 | 12-17
+  toggle-group.tsx             |       0 |        0 |       0 |       0 | 10-59
+  toggle.tsx                   |       0 |      100 |       0 |       0 | 7-41
+  tooltip.tsx                  |       0 |        0 |       0 |       0 | 8-28
+ client/src/hooks              |    2.63 |        0 |       0 |    2.79 | 
+  use-auth.ts                  |    8.62 |        0 |       0 |     9.8 | 17-21,29-149     
+  use-mobile.tsx               |       0 |      100 |       0 |       0 | 3-18
+  use-toast.ts                 |       0 |        0 |       0 |       0 | 8-187
+  use-websocket.ts             |       0 |        0 |       0 |       0 | 13-124
+ client/src/lib                |       0 |        0 |       0 |       0 | 
+  queryClient.ts               |       0 |        0 |       0 |       0 | 4-44
+  utils.ts                     |       0 |      100 |       0 |       0 | 5
+  websocket.ts                 |       0 |        0 |       0 |       0 | 4-90
+ client/src/pages              |       0 |        0 |       0 |       0 | 
+  about.tsx                    |       0 |      100 |       0 |       0 | 8-172
+  chat.tsx                     |       0 |        0 |       0 |       0 | 7-34
+  dashboard.tsx                |       0 |        0 |       0 |       0 | 23-247
+  knowledge.tsx                |       0 |        0 |       0 |       0 | 22-311
+  landing.tsx                  |       0 |      100 |       0 |       0 | 9-168             
+  lawyers.tsx                  |       0 |        0 |       0 |       0 | 14-188
+  not-found.tsx                |       0 |      100 |       0 |       0 | 5
+  profile.tsx                  |       0 |        0 |       0 |       0 | 30-376
+  sessions.tsx                 |       0 |        0 |       0 |       0 | 26-265
+ server                        |    4.81 |     3.74 |    4.58 |    5.04 | 
+  2fa-service.ts               |       0 |        0 |       0 |       0 | 15-153
+  ai-service.ts                |   67.56 |    53.84 |   71.42 |   67.56 | 127,135-167      
+  db-mysql.ts                  |       0 |        0 |       0 |       0 | 6-32
+  db.ts                        |       0 |        0 |       0 |       0 | 6-61
+  example-model-integration.ts |       0 |        0 |       0 |       0 | 12-106
+  routes.ts                    |       0 |        0 |       0 |       0 | 14-632
+  storage.ts                   |       0 |        0 |       0 |       0 | 63-368
+-------------------------------|---------|----------|---------|---------|-------------------
+Test Suites: 8 failed, 1 passed, 9 total
+Tests:       5 failed, 6 passed, 11 total
+Snapshots:   0 total
+Time:        129.982 s

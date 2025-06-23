@@ -79,11 +79,22 @@ describe('AI Legal Service', () => {
     });
 
     it('should handle model errors gracefully', async () => {
+      // Mock console.error to avoid test output noise
+      const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
+      
       mockCustomModel.predict.mockRejectedValue(new Error('Model API Error'));
 
       await expect(aiLegalService.processLegalQuery({
         question: 'Test question'
       })).rejects.toThrow('Failed to process legal query with custom model');
+      
+      // Verify error was logged
+      expect(consoleSpy).toHaveBeenCalledWith(
+        'Error processing legal query:',
+        expect.any(Error)
+      );
+      
+      consoleSpy.mockRestore();
     });
 
     it('should throw error when model is not set', async () => {

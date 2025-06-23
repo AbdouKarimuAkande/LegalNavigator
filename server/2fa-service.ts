@@ -1,6 +1,5 @@
 import speakeasy from 'speakeasy';
 import QRCode from 'qrcode';
-import fetch from 'node-fetch';
 
 export interface TwoFactorSetup {
   secret: string;

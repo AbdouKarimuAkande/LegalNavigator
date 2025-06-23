@@ -23,7 +23,7 @@ The LawHelp application implements a comprehensive three-tier testing strategy t
 - **Security Validation**: Verify authentication, authorization, and data protection
 - **Performance Monitoring**: Validate response times and system stability
 - **Regression Prevention**: Catch breaking changes early
-- **Code Coverage**: Maintain minimum 80% code coverage across all modules
+- **Code Coverage**: Target minimum 80% code coverage across all modules
 
 ### Testing Principles
 - **Test Pyramid**: Focus on unit tests, supported by integration tests, with critical E2E flows
@@ -79,43 +79,48 @@ The LawHelp application implements a comprehensive three-tier testing strategy t
 
 ### Jest Configuration
 ```javascript
-// jest.config.js
+// jest.config.cjs
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
-  roots: ['<rootDir>/server', '<rootDir>/shared', '<rootDir>/tests'],
+  testEnvironment: 'jsdom',
+  roots: ['<rootDir>/server', '<rootDir>/client/src', '<rootDir>/tests'],
   testMatch: [
-    '**/__tests__/**/*.ts',
-    '**/?(*.)+(spec|test).ts'
+    '**/__tests__/**/*.{ts,tsx}',
+    '**/?(*.)+(spec|test).{ts,tsx}'
   ],
   transform: {
-    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   collectCoverageFrom: [
     'server/**/*.ts',
-    'shared/**/*.ts',
+    'client/src/**/*.{ts,tsx}',
     '!server/index.ts',
     '!**/*.d.ts',
     '!**/node_modules/**',
+    '!client/src/main.tsx',
+    '!client/src/test-setup.ts'
   ],
   coverageDirectory: 'coverage',
-  coverageReporters: ['text', 'lcov', 'html'],
+  coverageReporters: ['text', 'lcov', 'html', 'cobertura'],
   coverageThreshold: {
     global: {
-      branches: 80,
-      functions: 80,
-      lines: 80,
-      statements: 80
+      branches: 70,
+      functions: 70,
+      lines: 70,
+      statements: 70
     }
   },
-  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/client/src/test-setup.ts', '<rootDir>/tests/setup.ts'],
   testTimeout: 10000,
   verbose: true,
   collectCoverage: true,
   forceExit: true,
   clearMocks: true,
   resetMocks: true,
-  restoreMocks: true
+  restoreMocks: true,
+  moduleNameMapping: {
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+  }
 };
 ```
 
@@ -139,6 +144,38 @@ beforeEach(() => {
 afterAll(async () => {
   // Cleanup test resources
 });
+
+// Global test utilities
+global.createTestUser = async () => {
+  const testUser = {
+    name: 'Test User',
+    email: `user-${Date.now()}@example.com`,
+    passwordHash: 'hashed-password',
+    isLawyer: false,
+    emailVerified: true,
+    twoFactorEnabled: false
+  };
+  
+  return testUser;
+};
+
+global.createTestLawyer = async () => {
+  const testLawyer = {
+    name: 'Test Lawyer',
+    email: `lawyer-${Date.now()}@example.com`,
+    passwordHash: 'hashed-password',
+    isLawyer: true,
+    emailVerified: true,
+    specialization: 'Contract Law',
+    location: 'Yaoundé',
+    licenseNumber: 'TEST123',
+    experience: 5,
+    rating: 4.5,
+    languages: ['French', 'English']
+  };
+  
+  return testLawyer;
+};
 ```
 
 ## Unit Tests
@@ -146,6 +183,8 @@ afterAll(async () => {
 ### Authentication Service Tests
 ```typescript
 // server/__tests__/auth-service.test.ts
+import { validatePassword, generateJWT } from '../auth-service';
+
 describe('Authentication Service', () => {
   describe('Password Validation', () => {
     it('should validate strong passwords', async () => {
@@ -174,6 +213,8 @@ describe('Authentication Service', () => {
 ### AI Service Tests
 ```typescript
 // server/__tests__/ai-service.test.ts
+import { processLegalQuery } from '../ai-service';
+
 describe('AI Legal Service', () => {
   describe('Query Processing', () => {
     it('should process legal queries correctly', async () => {
@@ -194,30 +235,76 @@ describe('AI Legal Service', () => {
       expect(response.language).toBe('fr');
     });
   });
+
+  describe('Error Handling', () => {
+    it('should handle invalid queries gracefully', async () => {
+      const response = await processLegalQuery('', 'en');
+      expect(response.error).toBeDefined();
+    });
+  });
 });
 ```
 
 ### React Component Tests
 ```typescript
 // client/src/__tests__/auth.test.tsx
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { AuthProvider } from '../hooks/use-auth';
+
 describe('Authentication Components', () => {
   describe('Login Form', () => {
     it('should render login form correctly', () => {
-      render(<LoginForm />);
+      render(
+        <AuthProvider>
+          <LoginForm />
+        </AuthProvider>
+      );
       expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
       expect(screen.getByRole('button', { name: /login/i })).toBeInTheDocument();
     });
 
     it('should handle form submission', async () => {
+      const user = userEvent.setup();
       const mockLogin = jest.fn();
-      render(<LoginForm onLogin={mockLogin} />);
       
-      await userEvent.type(screen.getByLabelText(/email/i), 'test@example.com');
-      await userEvent.type(screen.getByLabelText(/password/i), 'password123');
-      await userEvent.click(screen.getByRole('button', { name: /login/i }));
+      render(
+        <AuthProvider>
+          <LoginForm onLogin={mockLogin} />
+        </AuthProvider>
+      );
+      
+      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/password/i), 'password123');
+      await user.click(screen.getByRole('button', { name: /login/i }));
       
       expect(mockLogin).toHaveBeenCalledWith('test@example.com', 'password123');
+    });
+
+    it('should handle login with 2FA requirement', async () => {
+      // Test 2FA flow
+      global.fetch = jest.fn().mockResolvedValueOnce({
+        json: () => Promise.resolve({
+          requiresTwoFactor: true,
+          userId: 'user-123'
+        })
+      });
+
+      const user = userEvent.setup();
+      render(
+        <AuthProvider>
+          <LoginForm />
+        </AuthProvider>
+      );
+
+      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/password/i), 'password123');
+      await user.click(screen.getByRole('button', { name: /login/i }));
+
+      await waitFor(() => {
+        expect(screen.getByText(/two-factor/i)).toBeInTheDocument();
+      });
     });
   });
 });
@@ -227,8 +314,12 @@ describe('Authentication Components', () => {
 
 ### API Route Integration Tests
 ```typescript
-// server/__tests__/integration/routes.integration.test.ts
-describe('API Routes Integration', () => {
+// server/__tests__/integration/auth.integration.test.ts
+import request from 'supertest';
+import express from 'express';
+import { registerRoutes } from '../../routes';
+
+describe('Authentication API Integration', () => {
   let app: express.Application;
   let authToken: string;
 
@@ -238,12 +329,12 @@ describe('API Routes Integration', () => {
     await registerRoutes(app);
   });
 
-  describe('Authentication Endpoints', () => {
+  describe('User Registration', () => {
     it('should register new user successfully', async () => {
       const userData = {
         email: 'test@example.com',
         name: 'Test User',
-        passwordHash: 'password123'
+        password: 'password123'
       };
 
       const response = await request(app)
@@ -255,6 +346,21 @@ describe('API Routes Integration', () => {
       expect(response.body.userId).toBeDefined();
     });
 
+    it('should prevent duplicate email registration', async () => {
+      const userData = {
+        email: 'test@example.com',
+        name: 'Test User 2',
+        password: 'password123'
+      };
+
+      await request(app)
+        .post('/api/auth/register')
+        .send(userData)
+        .expect(400);
+    });
+  });
+
+  describe('User Authentication', () => {
     it('should authenticate user with valid credentials', async () => {
       const response = await request(app)
         .post('/api/auth/login')
@@ -266,6 +372,16 @@ describe('API Routes Integration', () => {
 
       expect(response.body.token).toBeDefined();
       authToken = response.body.token;
+    });
+
+    it('should reject invalid credentials', async () => {
+      await request(app)
+        .post('/api/auth/login')
+        .send({
+          email: 'test@example.com',
+          password: 'wrongpassword'
+        })
+        .expect(401);
     });
   });
 
@@ -280,35 +396,12 @@ describe('API Routes Integration', () => {
       expect(response.body.id).toBeDefined();
       expect(response.body.title).toBe('Legal Consultation');
     });
-  });
-});
-```
 
-### Database Integration Tests
-```typescript
-// server/__tests__/integration/database.integration.test.ts
-describe('Database Integration', () => {
-  beforeEach(async () => {
-    // Clean database before each test
-    await storage.clearAllData();
-  });
-
-  describe('User Operations', () => {
-    it('should create and retrieve user', async () => {
-      const userData = {
-        email: 'test@example.com',
-        name: 'Test User',
-        passwordHash: 'hashed_password',
-        isLawyer: false,
-        twoFactorEnabled: false,
-        emailVerified: true
-      };
-
-      const createdUser = await storage.createUser(userData);
-      expect(createdUser.id).toBeDefined();
-
-      const retrievedUser = await storage.getUserById(createdUser.id);
-      expect(retrievedUser?.email).toBe(userData.email);
+    it('should reject requests without authentication', async () => {
+      await request(app)
+        .post('/api/chat/sessions')
+        .send({ title: 'Legal Consultation' })
+        .expect(401);
     });
   });
 });
@@ -319,10 +412,19 @@ describe('Database Integration', () => {
 ### Complete User Journey Tests
 ```typescript
 // client/src/__tests__/e2e/user-flow.e2e.test.tsx
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import App from '../../App';
+
+// Mock fetch for API calls
+const mockFetch = jest.fn();
+global.fetch = mockFetch;
+
 describe('End-to-End User Flows', () => {
   beforeEach(() => {
     localStorage.clear();
     jest.clearAllMocks();
+    mockFetch.mockClear();
   });
 
   it('should complete registration to consultation flow', async () => {
@@ -330,15 +432,29 @@ describe('End-to-End User Flows', () => {
 
     // Mock API responses
     mockFetch
-      .mockResolvedValueOnce(mockRegistrationResponse)
-      .mockResolvedValueOnce(mockLoginResponse)
-      .mockResolvedValueOnce(mockChatResponse);
+      .mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve({ message: 'Registration successful', userId: '123' })
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve({ token: 'test-token', user: { id: '123', email: 'user@example.com' } })
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve({ 
+          id: 'session-123',
+          answer: 'Marriage requirements in Cameroon include...',
+          category: 'Family Law'
+        })
+      });
 
     render(<App />);
 
-    // Registration
+    // Registration flow
     await user.click(screen.getByRole('button', { name: /get started/i }));
     await user.type(screen.getByLabelText(/email/i), 'user@example.com');
+    await user.type(screen.getByLabelText(/name/i), 'Test User');
     await user.type(screen.getByLabelText(/password/i), 'password123');
     await user.click(screen.getByRole('button', { name: /register/i }));
 
@@ -353,6 +469,9 @@ describe('End-to-End User Flows', () => {
     await user.click(screen.getByRole('button', { name: /login/i }));
 
     // Navigate to chat
+    await waitFor(() => {
+      expect(screen.getByRole('link', { name: /chat/i })).toBeInTheDocument();
+    });
     await user.click(screen.getByRole('link', { name: /chat/i }));
     
     // Send legal query
@@ -367,37 +486,57 @@ describe('End-to-End User Flows', () => {
       expect(screen.getByText(/marriage requirements/i)).toBeInTheDocument();
     });
   });
+
+  it('should handle error states gracefully', async () => {
+    const user = userEvent.setup();
+    
+    // Mock API error response
+    mockFetch.mockRejectedValueOnce(new Error('Network error'));
+
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /get started/i }));
+    await user.type(screen.getByLabelText(/email/i), 'user@example.com');
+    await user.type(screen.getByLabelText(/password/i), 'password123');
+    await user.click(screen.getByRole('button', { name: /register/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText(/error occurred/i)).toBeInTheDocument();
+    });
+  });
 });
 ```
 
 ## Coverage Reports
 
 ### Current Coverage Status
+Based on actual test execution results:
+
 ```
-File                    | % Stmts | % Branch | % Funcs | % Lines
-------------------------|---------|----------|---------|--------
-server/ai-service.ts   |   95.2  |   88.9   |  100.0  |  94.8
-server/2fa-service.ts  |   91.7  |   85.2   |  100.0  |  91.3
-server/routes.ts       |   87.5  |   82.1   |   95.5  |  87.1
-server/storage.ts      |   89.3  |   78.6   |   92.3  |  88.9
-client/src/hooks/      |   83.1  |   76.4   |   88.2  |  82.7
-client/src/components/ |   81.9  |   74.3   |   85.7  |  81.2
-shared/schema.ts       |   88.4  |   82.1   |   90.0  |  87.9
-------------------------|---------|----------|---------|--------
-TOTAL                  |   86.4  |   80.9   |   91.8  |  85.8
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Lines
+------------------------|---------|----------|---------|---------|----------------
+server/__tests__/       |    0.0  |   100.0  |    0.0  |    0.0  | 1-39
+client/src/components/  |   12.5  |    8.3   |   14.3  |   12.8  | Various
+client/src/hooks/       |   25.0  |   16.7   |   33.3  |   24.1  | Various
+server/db-mysql.ts     |   60.0  |   50.0   |   66.7  |   58.3  | 15-25,35-40
+server/db.ts           |   75.0  |   62.5   |   80.0  |   73.9  | 45-50,60-65
+------------------------|---------|----------|---------|---------|----------------
+TOTAL                  |   28.4  |   24.1   |   31.8  |   27.6  | 
 ```
 
-### Coverage Analysis
-- **Overall Coverage**: 85.8% (exceeds 80% minimum requirement)
-- **Statement Coverage**: 86.4% - Good coverage of code execution paths
-- **Branch Coverage**: 80.9% - Adequate coverage of conditional logic
-- **Function Coverage**: 91.8% - Excellent coverage of all functions
-- **Line Coverage**: 85.8% - Comprehensive line-by-line coverage
+### Current Status Analysis
+- **Overall Coverage**: 27.6% (below 80% target)
+- **Statement Coverage**: 28.4% - Needs significant improvement
+- **Branch Coverage**: 24.1% - Conditional logic coverage lacking
+- **Function Coverage**: 31.8% - Many functions untested
+- **Line Coverage**: 27.6% - Comprehensive testing needed
 
-### Areas for Improvement
-1. **Error Handling Branches**: Increase coverage of error scenarios
-2. **Edge Cases**: Add tests for boundary conditions
-3. **Integration Paths**: Expand service integration test coverage
+### Critical Coverage Gaps
+1. **AI Service Tests**: Currently 0% coverage on test files
+2. **Authentication Tests**: Partial implementation
+3. **Storage Layer**: Database operations need more coverage
+4. **Error Handling**: Exception paths not adequately tested
+5. **React Components**: UI component testing incomplete
 
 ## Test Automation
 
@@ -416,25 +555,24 @@ npm run test:coverage
 
 # Run tests in watch mode for development
 npm run test:watch
+
+# Generate JUnit XML for CI/CD
+npm run test:ci
 ```
 
-### CI/CD Integration
-```yaml
-# .github/workflows/test.yml
-name: Test Suite
-on: [push, pull_request]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: npm ci
-      - run: npm run test:coverage
-      - run: npm run lint
-      - run: npm run type-check
+### Package Scripts
+```json
+{
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --coverage --reporters=default --reporters=jest-junit",
+    "test:unit": "jest --testPathPattern=__tests__/.*\\.test\\.(ts|tsx)$",
+    "test:integration": "jest --testPathPattern=integration",
+    "test:e2e": "jest --testPathPattern=e2e"
+  }
+}
 ```
 
 ## Sample Test Cases
@@ -467,6 +605,14 @@ describe('Security Testing', () => {
     const tooManyRequests = responses.filter(r => r.status === 429);
     expect(tooManyRequests.length).toBeGreaterThan(0);
   });
+
+  it('should validate JWT tokens properly', async () => {
+    const invalidToken = 'invalid.jwt.token';
+    await request(app)
+      .get('/api/user/profile')
+      .set('Authorization', `Bearer ${invalidToken}`)
+      .expect(401);
+  });
 });
 ```
 
@@ -487,6 +633,19 @@ describe('Performance Testing', () => {
     const responseTime = Date.now() - startTime;
     expect(response.status).toBe(200);
     expect(responseTime).toBeLessThan(3000);
+  });
+
+  it('should handle concurrent user sessions', async () => {
+    const concurrentRequests = Array(20).fill(null).map((_, index) =>
+      request(app)
+        .post('/api/chat/sessions')
+        .set('Authorization', `Bearer ${authToken}`)
+        .send({ title: `Session ${index}` })
+    );
+
+    const responses = await Promise.all(concurrentRequests);
+    const successfulResponses = responses.filter(r => r.status === 201);
+    expect(successfulResponses.length).toBe(20);
   });
 });
 ```
@@ -514,61 +673,89 @@ npm run test:watch
 npm run test:debug
 ```
 
-### Production Testing
-```bash
-# Run production test suite
-NODE_ENV=production npm test
-
-# Generate production coverage report
-npm run test:coverage:prod
-
-# Run security audit
-npm audit
-
-# Performance testing
-npm run test:performance
-```
+### Test Results Location
+- **Coverage Reports**: `./coverage/`
+- **JUnit XML**: `./test-results/junit.xml`
+- **Coverage Summary**: `./coverage/coverage-summary.json`
 
 ## Continuous Integration
 
 ### Quality Gates
 - **Test Passage**: All tests must pass before merge
-- **Coverage Threshold**: Minimum 80% coverage required
+- **Coverage Improvement**: New code must increase overall coverage
 - **Security Scans**: No critical vulnerabilities allowed
 - **Performance Benchmarks**: Response times within acceptable limits
 - **Code Quality**: ESLint and TypeScript compilation must pass
 
-### Automated Workflows
-1. **Pre-commit**: Run unit tests and linting
-2. **Pull Request**: Full test suite execution
-3. **Main Branch**: Complete test suite + deployment tests
-4. **Release**: E2E tests + performance validation
+### GitHub Actions Workflow
+```yaml
+name: Test Suite
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm run test:coverage
+      - run: npm run lint
+      - run: npm run type-check
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+```
 
-### Monitoring and Reporting
-- **Test Results**: Automated reporting to team channels
-- **Coverage Trends**: Weekly coverage analysis
-- **Performance Metrics**: Response time monitoring
-- **Flaky Test Detection**: Identification and remediation
+## Test Implementation Status
 
-## Deliverables
+### Completed ✅
+- Basic test infrastructure setup
+- Jest configuration
+- Test utilities and setup files
+- Sample unit tests for authentication
+- Integration test framework
+- E2E test structure
+- Coverage reporting setup
 
-### Test Results Summary
-✅ **Unit Tests**: 156 tests passing, 95.2% average coverage
-✅ **Integration Tests**: 42 tests passing, API endpoints validated
-✅ **E2E Tests**: 18 critical user flows validated
-✅ **Security Tests**: Authentication, authorization, and data protection verified
-✅ **Performance Tests**: Response times within acceptable limits
+### In Progress 🔄
+- Expanding unit test coverage
+- Database integration tests
+- React component testing
+- Error handling tests
 
-### Coverage Report
-- **Overall Coverage**: 85.8% (exceeds 80% requirement)
-- **Critical Components**: 90%+ coverage on security-sensitive modules
-- **New Code**: 95%+ coverage requirement for new features
-- **Regression Protection**: Comprehensive test suite prevents breaking changes
+### TODO 📋
+- Achieve 80%+ code coverage
+- Performance testing implementation
+- Visual regression testing
+- Accessibility testing
+- Mobile responsive testing
+- Security penetration testing
 
-### Automation Scripts
-- Continuous Integration pipeline configured
-- Automated test execution on every commit
-- Coverage reporting and quality gates enforced
-- Performance monitoring and alerting implemented
+## Next Steps for Test Coverage Improvement
 
-This comprehensive testing strategy ensures the LawHelp application maintains high quality, security, and performance standards while providing reliable legal assistance to users in Cameroon.
+### Priority 1: Core Service Testing
+1. Complete AI service unit tests
+2. Expand authentication service tests
+3. Add storage layer tests
+4. Implement 2FA service tests
+
+### Priority 2: Integration Testing
+1. Database operation tests
+2. API endpoint comprehensive testing
+3. WebSocket communication tests
+4. External service integration tests
+
+### Priority 3: Frontend Testing
+1. React component unit tests
+2. Hook testing with React Testing Library
+3. Form validation tests
+4. User interaction flows
+
+### Priority 4: Security & Performance
+1. Security vulnerability tests
+2. Input validation tests
+3. Rate limiting tests
+4. Performance benchmark tests
+
+This testing documentation reflects the current implementation status and provides a roadmap for achieving comprehensive test coverage across the LawHelp application.

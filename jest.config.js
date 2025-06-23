@@ -1,5 +1,5 @@
 
-module.exports = {
+export default {
   preset: 'ts-jest',
   testEnvironment: 'node',
   roots: ['<rootDir>/server', '<rootDir>/client/src', '<rootDir>/tests'],

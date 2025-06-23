@@ -25,7 +25,7 @@ describe('Storage Layer', () => {
       };
 
       const user = await storage.createUser(userData);
-      
+
       expect(user).toBeDefined();
       expect(user.email).toBe(userData.email);
       expect(user.name).toBe(userData.name);
@@ -42,7 +42,7 @@ describe('Storage Layer', () => {
 
       await storage.createUser(userData);
       const user = await storage.getUserByEmail(userData.email);
-      
+
       expect(user).toBeDefined();
       expect(user?.email).toBe(userData.email);
     });
@@ -103,16 +103,18 @@ describe('Storage Layer', () => {
       });
 
       const messageData = {
+        userId: user.id,
         sessionId: session.id,
-        content: 'What are my rights in a contract dispute?',
-        role: 'user' as const
+        content: 'What are my rights?',
+        sender: 'user'
       };
 
       const message = await storage.createChatMessage(messageData);
+      const messages = await storage.getChatMessages(session.id);
 
-      expect(message).toBeDefined();
-      expect(message.content).toBe(messageData.content);
-      expect(message.role).toBe('user');
+      expect(message.id).toBeDefined();
+      expect(message.content).toBe('What are my rights?');
+      expect(message.sender).toBe('user');
     });
 
     it('should retrieve chat messages for a session', async () => {
@@ -129,23 +131,29 @@ describe('Storage Layer', () => {
         title: 'Test Session'
       });
 
-      await storage.createChatMessage({
+      const userMessage = {
+        userId: user.id,
         sessionId: session.id,
-        content: 'User message',
-        role: 'user'
-      });
+        content: 'Hello',
+        sender: 'user'
+      };
 
-      await storage.createChatMessage({
+      const assistantMessage = {
+        userId: user.id,
         sessionId: session.id,
-        content: 'AI response',
-        role: 'assistant'
-      });
+        content: 'Hi there!',
+        sender: 'assistant'
+      };
+
+      await storage.createChatMessage(userMessage);
+
+      await storage.createChatMessage(assistantMessage);
 
       const messages = await storage.getChatMessages(session.id);
 
       expect(messages).toHaveLength(2);
-      expect(messages[0].content).toBe('User message');
-      expect(messages[1].content).toBe('AI response');
+      expect(messages[0].content).toBe('Hello');
+      expect(messages[1].content).toBe('Hi there!');
     });
   });
 
@@ -161,61 +169,70 @@ describe('Storage Layer', () => {
       const user = await storage.createUser(userData);
       const lawyerData = {
         userId: user.id,
-        specialization: 'Contract Law',
-        location: 'Yaoundé',
-        licenseNumber: 'BAR12345',
-        experience: 5,
-        languages: ['French', 'English']
+        licenseNumber: 'BAR001',
+        specialization: 'Family Law',
+        experienceYears: 5,
+        practiceAreas: ['Family Law', 'Divorce'],
+        languages: ['English', 'French'],
+        verified: true
       };
 
       const lawyer = await storage.createLawyer(lawyerData);
 
-      expect(lawyer).toBeDefined();
+      expect(lawyer.id).toBeDefined();
       expect(lawyer.specialization).toBe(lawyerData.specialization);
-      expect(lawyer.location).toBe(lawyerData.location);
-      expect(lawyer.experience).toBe(5);
+      expect(lawyer.experienceYears).toBe(5);
     });
 
     it('should filter lawyers by specialization', async () => {
       // Create test lawyers with different specializations
-      const contractLawyerUser = await storage.createUser({
+      const user1 = await storage.createUser({
         name: 'Contract Lawyer',
         email: 'contract@example.com',
         passwordHash: 'hash',
         isLawyer: true
       });
 
-      const criminalLawyerUser = await storage.createUser({
+      const user2 = await storage.createUser({
         name: 'Criminal Lawyer',
         email: 'criminal@example.com',
         passwordHash: 'hash',
         isLawyer: true
       });
 
-      await storage.createLawyer({
-        userId: contractLawyerUser.id,
-        specialization: 'Contract Law',
-        location: 'Yaoundé',
-        licenseNumber: 'BAR1',
-        experience: 3,
-        languages: ['French']
-      });
-
-      await storage.createLawyer({
-        userId: criminalLawyerUser.id,
+      const lawyer1Data = {
+        userId: user1.id,
+        licenseNumber: 'BAR001',
         specialization: 'Criminal Law',
-        location: 'Douala',
-        licenseNumber: 'BAR2',
-        experience: 7,
-        languages: ['English']
-      });
+        experienceYears: 10,
+        practiceAreas: ['Criminal Law', 'Defense'],
+        languages: ['English', 'French'],
+        verified: true
+      };
+
+      const lawyer2Data = {
+        userId: user2.id,
+        licenseNumber: 'BAR002',
+        specialization: 'Family Law',
+        experienceYears: 5,
+        practiceAreas: ['Family Law', 'Divorce'],
+        languages: ['English'],
+        verified: true
+      };
+
+      await storage.createLawyer(lawyer1Data);
+
+      await storage.createLawyer(lawyer2Data);
 
       const contractLawyers = await storage.getLawyers({
         specialization: 'Contract Law'
       });
 
-      expect(contractLawyers).toHaveLength(1);
-      expect(contractLawyers[0].specialization).toBe('Contract Law');
+      expect(contractLawyers).toHaveLength(0);
+      const criminalLawyers = await storage.getLawyers({
+        specialization: 'Criminal Law'
+      });
+      expect(criminalLawyers).toHaveLength(1);
     });
   });
 
@@ -232,7 +249,8 @@ describe('Storage Layer', () => {
       const codeData = {
         userId: user.id,
         type: 'email_verification',
-        code: '123456'
+        code: '123456',
+        expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000) // 24 hours from now
       };
 
       const verificationCode = await storage.createVerificationCode(codeData);
@@ -265,7 +283,7 @@ describe('Storage Layer', () => {
 
       const users = await Promise.all(promises);
       expect(users).toHaveLength(10);
-      
+
       // Verify all users have unique IDs
       const ids = users.map(u => u.id);
       const uniqueIds = new Set(ids);

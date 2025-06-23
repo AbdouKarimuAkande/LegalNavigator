@@ -5,7 +5,7 @@ import { storage } from '../storage';
 import bcrypt from 'bcrypt';
 
 describe('API Routes Integration Tests', () => {
-  let app: express.Application;
+  let app: express.Express;
   let server: any;
 
   beforeAll(async () => {
@@ -84,6 +84,8 @@ describe('API Routes Integration Tests', () => {
         await storage.createUser({
           email: 'test@example.com',
           name: 'Test User',
+          firstName: 'Test',
+          lastName: 'User',
           passwordHash,
           isLawyer: false,
           twoFactorEnabled: false,
@@ -137,6 +139,8 @@ describe('API Routes Integration Tests', () => {
       const user = await storage.createUser({
         email: 'test@example.com',
         name: 'Test User',
+        firstName: 'Test',
+        lastName: 'User',
         passwordHash,
         isLawyer: false,
         twoFactorEnabled: false,
@@ -209,6 +213,8 @@ describe('API Routes Integration Tests', () => {
       await storage.createUser({
         email: 'test@example.com',
         name: 'Test User',
+        firstName: 'Test',
+        lastName: 'User',
         passwordHash,
         isLawyer: false,
         twoFactorEnabled: false,
@@ -274,6 +280,8 @@ describe('API Routes Integration Tests', () => {
       const user = await storage.createUser({
         email: 'lawyer@example.com',
         name: 'Test Lawyer',
+        firstName: 'Test',
+        lastName: 'Lawyer',
         passwordHash,
         isLawyer: true,
         twoFactorEnabled: false,
@@ -302,7 +310,7 @@ describe('API Routes Integration Tests', () => {
           practiceAreas: ['Criminal Defense', 'Civil Rights'],
           languages: ['English', 'French'],
           verified: true,
-          rating: 450,
+          rating: "4.5",
           totalReviews: 10
         });
       });

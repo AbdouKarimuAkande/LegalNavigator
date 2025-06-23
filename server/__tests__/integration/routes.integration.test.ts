@@ -54,7 +54,9 @@ describe('Routes Integration Tests', () => {
       // Create user first
       await storage.createUser({
         ...userData,
-        password: await bcrypt.hash(userData.password, 10),
+        firstName: 'Existing',
+        lastName: 'User',
+        passwordHash: await bcrypt.hash('password123', 10),
         isLawyer: false,
         emailVerified: false,
         twoFactorEnabled: false
@@ -79,7 +81,9 @@ describe('Routes Integration Tests', () => {
       // Create user first
       await storage.createUser({
         ...userData,
-        password: await bcrypt.hash(userData.password, 10),
+        firstName: 'Login',
+        lastName: 'User',
+        passwordHash: await bcrypt.hash('password123', 10),
         isLawyer: false,
         emailVerified: true,
         twoFactorEnabled: false

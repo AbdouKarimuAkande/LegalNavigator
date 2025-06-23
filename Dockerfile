@@ -1,20 +1,16 @@
-# Multi-stage build for Node.js application
-FROM node:20-alpine AS base
 
-# Install dependencies only when needed
-FROM base AS deps
+# Multi-stage build for Legal Navigator
+FROM node:20-alpine AS builder
+
+# Set working directory
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
-RUN npm ci --only=production
+COPY tsconfig.json ./
 
-# Rebuild the source code only when needed
-FROM base AS builder
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci
+# Install dependencies
+RUN npm ci --only=production && npm cache clean --force
 
 # Copy source code
 COPY . .
@@ -22,30 +18,40 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Production image, copy all the files and run the app
-FROM base AS runner
+# Production stage
+FROM node:20-alpine AS production
+
+# Create app user for security
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S lawhelp -u 1001
+
+# Set working directory
 WORKDIR /app
 
-ENV NODE_ENV=production
+# Copy built application from builder stage
+COPY --from=builder --chown=lawhelp:nodejs /app/dist ./dist
+COPY --from=builder --chown=lawhelp:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=lawhelp:nodejs /app/package*.json ./
 
-# Create a non-root user
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+# Install production dependencies only
+RUN npm ci --only=production && npm cache clean --force
 
-# Copy built application
-COPY --from=builder /app/dist ./dist
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=builder /app/package*.json ./
-
-# Set correct permissions
-USER nextjs
+# Create logs directory
+RUN mkdir -p /app/logs && chown lawhelp:nodejs /app/logs
 
 # Expose port
 EXPOSE 5000
 
-# Health check
+# Add health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:5000/api/health || exit 1
+  CMD node -e "require('http').get('http://localhost:5000/api/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"
+
+# Switch to non-root user
+USER lawhelp
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=5000
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["node", "dist/index.js"]

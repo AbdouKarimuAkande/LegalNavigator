@@ -1,5 +1,153 @@
 import { Request, Response } from 'express';
 import { storage } from './storage';
+import express from 'express';
+import promClient from 'prom-client';
+
+// Create a Registry to register the metrics
+const register = new promClient.Registry();
+
+// Add default metrics
+promClient.collectDefaultMetrics({
+  register,
+  prefix: 'lawhelp_',
+});
+
+// Custom metrics
+const httpRequestsTotal = new promClient.Counter({
+  name: 'lawhelp_http_requests_total',
+  help: 'Total number of HTTP requests',
+  labelNames: ['method', 'route', 'status_code'],
+});
+
+const httpRequestDuration = new promClient.Histogram({
+  name: 'lawhelp_http_request_duration_seconds',
+  help: 'Duration of HTTP requests in seconds',
+  labelNames: ['method', 'route', 'status_code'],
+  buckets: [0.1, 0.5, 1, 2, 5],
+});
+
+const activeUsersGauge = new promClient.Gauge({
+  name: 'lawhelp_active_users_total',
+  help: 'Total number of active users',
+});
+
+const chatSessionsTotal = new promClient.Counter({
+  name: 'lawhelp_chat_sessions_total',
+  help: 'Total number of chat sessions created',
+});
+
+const aiQueryDuration = new promClient.Histogram({
+  name: 'lawhelp_ai_query_duration_seconds',
+  help: 'Duration of AI query processing in seconds',
+  buckets: [0.5, 1, 2, 5, 10, 30],
+});
+
+const databaseOperationsTotal = new promClient.Counter({
+  name: 'lawhelp_database_operations_total',
+  help: 'Total number of database operations',
+  labelNames: ['operation', 'table', 'status'],
+});
+
+const databaseConnectionsActive = new promClient.Gauge({
+  name: 'lawhelp_database_connections_active',
+  help: 'Number of active database connections',
+});
+
+// Register custom metrics
+register.registerMetric(httpRequestsTotal);
+register.registerMetric(httpRequestDuration);
+register.registerMetric(activeUsersGauge);
+register.registerMetric(chatSessionsTotal);
+register.registerMetric(aiQueryDuration);
+register.registerMetric(databaseOperationsTotal);
+register.registerMetric(databaseConnectionsActive);
+
+export const metricsRouter = express.Router();
+
+// Metrics endpoint for Prometheus
+metricsRouter.get('/metrics', async (req, res) => {
+  try {
+    res.set('Content-Type', register.contentType);
+    const metrics = await register.metrics();
+    res.end(metrics);
+  } catch (error) {
+    res.status(500).end(error);
+  }
+});
+
+// Health check endpoint
+metricsRouter.get('/health', (req, res) => {
+  res.json({ 
+    status: 'healthy', 
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    memory: process.memoryUsage(),
+    version: process.version
+  });
+});
+
+// Detailed health check
+metricsRouter.get('/health/detailed', async (req, res) => {
+  const healthCheck = {
+    status: 'healthy',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    memory: process.memoryUsage(),
+    version: process.version,
+    environment: process.env.NODE_ENV || 'development',
+    services: {
+      database: 'healthy', // This would be checked against actual DB
+      ai_service: 'healthy',
+      websocket: 'healthy'
+    }
+  };
+
+  try {
+    // Add actual service checks here
+    res.json(healthCheck);
+  } catch (error) {
+    res.status(503).json({
+      ...healthCheck,
+      status: 'unhealthy',
+      error: error.message
+    });
+  }
+});
+
+// Export metrics for use in other modules
+export const metrics = {
+  httpRequestsTotal,
+  httpRequestDuration,
+  activeUsersGauge,
+  chatSessionsTotal,
+  aiQueryDuration,
+  databaseOperationsTotal,
+  databaseConnectionsActive
+};
+
+// Middleware to track HTTP requests
+export const metricsMiddleware = (req: express.Request, res: express.Response, next: express.NextFunction) => {
+  const start = Date.now();
+
+  res.on('finish', () => {
+    const duration = (Date.now() - start) / 1000;
+    const route = req.route?.path || req.path;
+
+    httpRequestsTotal.inc({
+      method: req.method,
+      route,
+      status_code: res.statusCode
+    });
+
+    httpRequestDuration.observe({
+      method: req.method,
+      route,
+      status_code: res.statusCode
+    }, duration);
+  });
+
+  next();
+};
 
 interface Metrics {
   total_users: number;
@@ -39,14 +187,14 @@ class MetricsCollector {
 
     const activeSessions = sessions.filter(session => session.status === 'active');
     const uptime = Math.floor((Date.now() - this.startTime) / 1000);
-    
+
     // Memory usage
     const memUsage = process.memoryUsage();
     const memoryUsageMB = Math.round(memUsage.heapUsed / 1024 / 1024);
 
     // Error rate calculation
     const errorRate = this.requestCount > 0 ? (this.errorCount / this.requestCount) * 100 : 0;
-    
+
     // Average response time
     const avgResponseTime = this.requestCount > 0 ? this.totalResponseTime / this.requestCount : 0;
 
@@ -66,7 +214,7 @@ class MetricsCollector {
   // Prometheus format metrics
   async getPrometheusMetrics(): Promise<string> {
     const metrics = await this.collectMetrics();
-    
+
     return `
 # HELP lawhelp_total_users Total number of registered users
 # TYPE lawhelp_total_users gauge
@@ -129,6 +277,6 @@ export function healthHandler(req: Request, res: Response) {
     uptime: Math.floor((Date.now() - metricsCollector['startTime']) / 1000),
     version: process.env.npm_package_version || '1.0.0'
   };
-  
+
   res.json(health);
 }

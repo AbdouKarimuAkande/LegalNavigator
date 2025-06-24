@@ -14,7 +14,7 @@ A comprehensive legal assistance platform with AI-powered advice and lawyer dire
 ### 1. Clone and Setup Project
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/AbdouKarimuAkande/LegalNavigator
 cd LegalNavigator
 npm install
 ```
